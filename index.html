@@ -10,18 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #05070b;
-      --bg-2: #0b0f16;
-      --panel: rgba(15, 18, 27, 0.88);
-      --panel-2: rgba(18, 22, 32, 0.96);
-      --line: rgba(255, 214, 76, 0.18);
+      --bg: #06080c;
+      --bg-soft: #0c1118;
+      --panel: rgba(15, 19, 28, 0.9);
+      --panel-strong: rgba(17, 22, 32, 0.98);
+      --line: rgba(255, 209, 59, 0.16);
+      --line-soft: rgba(255,255,255,0.08);
       --text: #f8fafc;
-      --muted: #b4bcc9;
-      --gold: #ffd43f;
+      --muted: #b6becc;
+      --gold: #ffd13b;
       --gold-2: #ffb300;
-      --blue: #72c7ff;
-      --shadow: 0 24px 80px rgba(0,0,0,0.45);
-      --radius-xl: 28px;
+      --blue: #6cc6ff;
+      --shadow: 0 24px 80px rgba(0,0,0,0.46);
+      --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
       --max: 1280px;
@@ -34,9 +35,9 @@
       font-family: 'Outfit', system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255, 179, 0, 0.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(114, 199, 255, 0.08), transparent 24%),
-        linear-gradient(180deg, #040507 0%, #080a0f 45%, #05070b 100%);
+        radial-gradient(circle at top left, rgba(255, 179, 0, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(108, 198, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, #05070b 0%, #090d13 45%, #05070b 100%);
       overflow-x: hidden;
     }
 
@@ -53,7 +54,7 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(18px);
-      background: rgba(4, 6, 10, 0.74);
+      background: rgba(4, 6, 10, 0.78);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
@@ -77,7 +78,7 @@
       width: 58px;
       height: 58px;
       object-fit: contain;
-      filter: drop-shadow(0 12px 24px rgba(255, 179, 0, 0.2));
+      filter: drop-shadow(0 12px 24px rgba(255, 179, 0, 0.18));
     }
 
     .brand small {
@@ -122,7 +123,8 @@
 
     .hero-copy,
     .hero-visual,
-    .card {
+    .card,
+    details {
       background: var(--panel);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius-xl);
@@ -163,7 +165,7 @@
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      font-size: clamp(2.7rem, 6vw, 5.1rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
     }
@@ -241,14 +243,14 @@
       overflow: hidden;
       min-height: 620px;
       background:
-        linear-gradient(180deg, rgba(8, 10, 14, 0.25), rgba(5, 7, 11, 0.68)),
+        linear-gradient(180deg, rgba(8, 10, 14, 0.22), rgba(5, 7, 11, 0.7)),
         url('standort.png') center/cover no-repeat;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+      background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.62));
     }
 
     .hero-badge {
@@ -260,7 +262,7 @@
       gap: 12px;
       padding: 14px 18px;
       border-radius: 18px;
-      background: rgba(5, 7, 11, 0.8);
+      background: rgba(5, 7, 11, 0.82);
       border: 1px solid rgba(255,255,255,0.08);
       z-index: 2;
     }
@@ -279,7 +281,7 @@
       z-index: 2;
       padding: 22px;
       border-radius: 22px;
-      background: rgba(7, 10, 16, 0.8);
+      background: rgba(7, 10, 16, 0.82);
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -307,6 +309,7 @@
       margin: 10px 0 0;
       color: var(--muted);
       max-width: 760px;
+      line-height: 1.7;
     }
 
     .grid-2, .grid-3, .grid-4 {
@@ -337,23 +340,10 @@
       font-size: 1.4rem;
     }
 
-    .team-card, .employee-card {
+    .team-card,
+    .employee-card {
       position: relative;
       overflow: hidden;
-    }
-
-    .role {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 212, 63, 0.12);
-      color: var(--gold);
-      border: 1px solid rgba(255, 212, 63, 0.18);
-      font-size: 0.82rem;
-      font-weight: 700;
     }
 
     .avatar {
@@ -363,28 +353,49 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #111;
       margin-bottom: 16px;
       background: linear-gradient(135deg, var(--gold), #fff0a6);
     }
 
-    .employee-card .avatar {
-      background: linear-gradient(135deg, #fff0a6, var(--gold-2));
-    }
-
+    .role,
     .award {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      margin-top: 10px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(114, 199, 255, 0.1);
-      border: 1px solid rgba(114, 199, 255, 0.16);
-      color: var(--blue);
       font-size: 0.82rem;
       font-weight: 700;
-      margin-top: 10px;
+      border: 1px solid transparent;
+    }
+
+    .role {
+      background: rgba(255, 212, 63, 0.12);
+      color: var(--gold);
+      border-color: rgba(255, 212, 63, 0.18);
+    }
+
+    .award {
+      background: rgba(108, 198, 255, 0.1);
+      color: var(--blue);
+      border-color: rgba(108, 198, 255, 0.16);
+    }
+
+    .employee-card {
+      padding: 16px;
+    }
+
+    .employee-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+      background: #10151d;
     }
 
     .pricing-card {
@@ -486,14 +497,11 @@
       margin-top: 14px;
       color: var(--muted);
       font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     details {
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 18px;
       padding: 18px 20px;
-      box-shadow: var(--shadow);
     }
 
     summary {
@@ -503,7 +511,7 @@
     }
 
     summary::-webkit-details-marker { display: none; }
-    details p { color: var(--muted); margin: 12px 0 0; }
+    details p { color: var(--muted); margin: 12px 0 0; line-height: 1.7; }
 
     .footer {
       padding: 26px 0 60px;
@@ -576,7 +584,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Diamond Taxi • Offizielle Unternehmensseite</div>
-          <h1>Premium Taxi-Service für <span class="gold">Retro City</span></h1>
+          <h1>Premium Taxi-Unternehmen für <span class="gold">Retro City</span></h1>
           <p>
             Willkommen auf der offiziellen Seite von Diamond Taxi. Hier findest du alle wichtigen Informationen zum Unternehmen, zur Leitung, zum Standort, zur Preisstruktur, zu den aktuellen Top-Mitarbeitern und zu den offiziellen Kontaktwegen für Fragen, Bewerbungen und Beschwerden. Die Seite ist komplett neu aufgebaut und bewusst klar, modern und hochwertig gestaltet.
           </p>
@@ -692,33 +700,27 @@
         <div class="section-head">
           <div>
             <h2>Mitarbeiter des Monats</h2>
-            <p>Diese Mitarbeitenden gehören aktuell zu den stärksten Kräften bei Diamond Taxi und werden hier sichtbar hervorgehoben.</p>
+            <p>Diese Mitarbeitenden gehören aktuell zu den stärksten Kräften bei Diamond Taxi und werden hier mit Bild und eigenem Profil sichtbar hervorgehoben.</p>
           </div>
         </div>
-        <div class="grid-4">
+        <div class="grid-3">
           <article class="card employee-card">
-            <div class="avatar">JB</div>
+            <img class="employee-photo" src="jeff.png" alt="Jeff Adil Cüneyt Rince">
+            <h3>Jeff Adil Cüneyt Rince</h3>
+            <span class="award">Mitarbeiter des Monats</span>
+            <p>Jeff Adil Cüneyt Rince gehört aktuell zu den besten Mitarbeitenden von Diamond Taxi und wird für seine starke Leistung und sein professionelles Auftreten besonders hervorgehoben.</p>
+          </article>
+          <article class="card employee-card">
+            <img class="employee-photo" src="joe.png" alt="Joe Barbaro">
             <h3>Joe Barbaro</h3>
-            <span class="award">Top-Mitarbeiter</span>
-            <p>Aktuell einer der besten Mitarbeitenden des Unternehmens und ein wichtiger Teil des starken Diamond Taxi Teams.</p>
+            <span class="award">Mitarbeiter des Monats</span>
+            <p>Joe Barbaro zählt zu den stärksten Kräften im Unternehmen und überzeugt aktuell mit Verlässlichkeit, Präsenz und einem hochwertigen Gesamtauftritt.</p>
           </article>
           <article class="card employee-card">
-            <div class="avatar">RQ</div>
+            <img class="employee-photo" src="rafa.png" alt="Rafa Quintero">
             <h3>Rafa Quintero</h3>
-            <span class="award">Top-Mitarbeiter</span>
-            <p>Zeigt starke Leistung, verlässliche Präsenz und trägt wesentlich zum professionellen Auftreten von Diamond Taxi bei.</p>
-          </article>
-          <article class="card employee-card">
-            <div class="avatar">JA</div>
-            <h3>Jeff Adil</h3>
-            <span class="award">Top-Mitarbeiter</span>
-            <p>Gehört aktuell zu den besten Mitarbeitenden und überzeugt durch Engagement, Auftreten und starke Leistungen.</p>
-          </article>
-          <article class="card employee-card">
-            <div class="avatar">CR</div>
-            <h3>Cüneyt Rince</h3>
-            <span class="award">Top-Mitarbeiter</span>
-            <p>Wird für seine aktuelle Leistung besonders hervorgehoben und zählt momentan zu den wertvollsten Kräften im Unternehmen.</p>
+            <span class="award">Mitarbeiter des Monats</span>
+            <p>Rafa Quintero wird aufgrund seiner aktuellen Leistung, seines Engagements und seiner starken Wirkung im Unternehmen besonders ausgezeichnet.</p>
           </article>
         </div>
       </div>
@@ -784,7 +786,7 @@
           </article>
           <article class="card">
             <h3>Offizieller Unternehmenssitz</h3>
-            <p>Dieses Bild zeigt den sichtbaren Außenbereich des Unternehmens und bildet den Standort nun korrekt und hochwertig auf der Website ab.</p>
+            <p>Dieses Bild zeigt den sichtbaren Außenbereich des Unternehmens und bildet den Standort korrekt und hochwertig auf der Website ab.</p>
             <div class="list">
               <div>Realer Standort direkt im Design eingebunden</div>
               <div>Keine abstrakte Kartenansicht</div>
@@ -814,7 +816,7 @@
               <div>Beschwerden oder offizielles Feedback</div>
               <div>Webhook-Versand direkt aus dem Formular</div>
             </div>
-            <p class="note">Trage im Code nur noch deine Discord-Webhook-URL ein. Weitere falsche oder unpassende Buttons wurden entfernt.</p>
+            <p class="note">Lege für die Mitarbeiterbilder zusätzlich die Dateien <strong>jeff.png</strong>, <strong>joe.png</strong> und <strong>rafa.png</strong> in dein Projekt. Für das Branding werden außerdem <strong>logo.png</strong> und <strong>standort.png</strong> benötigt.</p>
           </article>
 
           <article class="card">
@@ -859,8 +861,8 @@
             <p>Anfahrt 100 $. Danach 4 $ pro Meter mit Fahrgast. Bei Grenzübergängen 750 $ plus zusätzlich 4 $ pro Meter.</p>
           </details>
           <details>
-            <summary>Wie nutze ich das Logo und das Standortbild?</summary>
-            <p>Lege die beiden Dateien in deinem GitHub-Projekt als <strong>logo.png</strong> und <strong>standort.png</strong> ab, damit die Seite sie korrekt lädt.</p>
+            <summary>Welche Bilder muss ich in GitHub hinterlegen?</summary>
+            <p>Lege die Dateien <strong>logo.png</strong>, <strong>standort.png</strong>, <strong>jeff.png</strong>, <strong>joe.png</strong> und <strong>rafa.png</strong> im gleichen Ordner wie die <strong>index.html</strong> ab.</p>
           </details>
         </div>
       </div>
@@ -872,7 +874,7 @@
       <div class="footer-card">
         <div>
           <strong>Diamond Taxi</strong> <span class="muted">| Retro City</span>
-          <div class="muted">Offizielle Unternehmensseite mit Leitung, Standort, Preisstruktur, Top-Mitarbeitern und Kontakt.</div>
+          <div class="muted">Offizielle Unternehmensseite mit Leitung, Standort, Preisstruktur, Mitarbeiter des Monats und Kontakt.</div>
         </div>
         <div class="muted">Für GitHub als <span class="gold">index.html</span> vorbereitet</div>
       </div>
@@ -899,7 +901,7 @@
           return;
         }
 
-        if (WEBHOOK_URL === "https://discord.com/api/webhooks/1485311222680387635/JHnxztYSFwWgvYSj_jmATeRhddMtPYSNNW0G7QzuPeJ1fVgBx1v42jOdyNZ5o0xL9FYR") {
+        if (WEBHOOK_URL === "HIER_DEIN_DISCORD_WEBHOOK_EINFUEGEN") {
           statusText.textContent = "Bitte trage zuerst deine Discord-Webhook-URL im Code ein.";
           return;
         }
