@@ -4,27 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diamond Taxi | Retro City</title>
-  <meta name="description" content="Offizielle Unternehmensseite von Diamond Taxi in Retro City – Leitung, Standort, Unternehmen, Team und Kontakt für Fragen, Beschwerden und Bewerbungen." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <meta name="description" content="Offizielle Unternehmensseite von Diamond Taxi in Retro City – Leitung, Standort, Preise, Kontakt, Bewerbung und Beschwerden." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #060606;
-      --bg-2: #0e0e0f;
-      --panel: rgba(18, 18, 20, 0.92);
-      --panel-soft: rgba(255, 210, 48, 0.06);
-      --line: rgba(255, 213, 74, 0.18);
-      --text: #f5f5f2;
-      --muted: #b7b7b0;
-      --gold: #ffd84a;
-      --gold-strong: #ffbf00;
-      --gold-soft: #fff2b0;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --bg: #05070b;
+      --bg-2: #0b0f16;
+      --panel: rgba(15, 18, 27, 0.86);
+      --panel-2: rgba(19, 24, 34, 0.94);
+      --line: rgba(255, 214, 76, 0.18);
+      --text: #f8fafc;
+      --muted: #b4bcc9;
+      --gold: #ffd43f;
+      --gold-2: #ffb300;
+      --blue: #72c7ff;
+      --shadow: 0 24px 80px rgba(0,0,0,0.45);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
-      --max: 1240px;
+      --max: 1280px;
     }
 
     * { box-sizing: border-box; }
@@ -34,15 +34,14 @@
       font-family: 'Outfit', system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top right, rgba(255, 191, 0, 0.12), transparent 25%),
-        radial-gradient(circle at top left, rgba(255, 216, 74, 0.08), transparent 20%),
-        linear-gradient(180deg, #050505 0%, #0a0a0b 45%, #050505 100%);
-      line-height: 1.6;
+        radial-gradient(circle at top left, rgba(255, 179, 0, 0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(114, 199, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, #040507 0%, #080a0f 45%, #05070b 100%);
       overflow-x: hidden;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -54,46 +53,840 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(18px);
-      background: rgba(5, 5, 5, 0.84);
-      border-bottom: 1px solid rgba(255, 216, 74, 0.12);
+      background: rgba(4, 6, 10, 0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav {
-      min-height: 86px;
+      min-height: 84px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 68px;
-      height: 68px;
-      object-fit: contain;
-      filter: drop-shadow(0 12px 25px rgba(255, 191, 0, 0.22));
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 1.15rem;
+      gap: 14px;
+      font-weight: 800;
       letter-spacing: 0.02em;
     }
 
-    .brand-text span {
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(255, 179, 0, 0.2));
+    }
+
+    .brand small {
+      display: block;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero {
+      padding: 76px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .card,
+    .glass {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto -100px -100px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 179, 0, 0.22), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
       gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #111;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 28px rgba(255, 179, 0, 0.2);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 24px;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #111;
+      box-shadow: 0 16px 36px rgba(255,179,0,0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      background:
+        linear-gradient(180deg, rgba(8, 10, 14, 0.25), rgba(5, 7, 11, 0.68)),
+        url('standort.png') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(5, 7, 11, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      z-index: 2;
+    }
+
+    .hero-badge img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .hero-location {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(7, 10, 16, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-location h3 { margin: 0 0 8px; }
+    .hero-location p { margin: 0; color: var(--muted); }
+
+    section { padding: 34px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      padding: 24px;
+      height: 100%;
+    }
+
+    .card p { color: var(--muted); margin: 12px 0 0; line-height: 1.7; }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(255, 212, 63, 0.18), rgba(114, 199, 255, 0.10));
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 1.4rem;
+    }
+
+    .team-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 212, 63, 0.12);
+      color: var(--gold);
+      border: 1px solid rgba(255, 212, 63, 0.18);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: #111;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--gold), #fff0a6);
+    }
+
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      margin: 12px 0 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .price strong {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .list div {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .list div::before {
+      content: '✦';
+      color: var(--gold);
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .location-photo {
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .location-photo img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: #8e97a8; }
+    textarea { min-height: 150px; resize: vertical; }
+
+    select option {
+      background: #121821;
+      color: #f8fafc;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    details p { color: var(--muted); margin: 12px 0 0; }
+
+    .footer {
+      padding: 26px 0 60px;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      padding: 22px 24px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .gold { color: var(--gold); }
+    .muted { color: var(--muted); }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .contact-wrap,
+      .grid-4 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual { min-height: 520px; }
+    }
+
+    @media (max-width: 780px) {
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .nav-links { justify-content: flex-start; }
+      .hero { padding-top: 52px; }
+      .hero-copy { padding: 24px; }
+      .hero-stats,
+      .grid-2,
+      .grid-3,
+      .contact-wrap { grid-template-columns: 1fr; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .hero-visual { min-height: 440px; }
+      h1 { line-height: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#start" class="brand">
+        <img src="logo.png" alt="Diamond Taxi Logo">
+        <div>
+          Diamond Taxi
+          <small>Retro City</small>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#ueberblick">Überblick</a>
+        <a href="#leitung">Leitung</a>
+        <a href="#preise">Preise</a>
+        <a href="#standort">Standort</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Diamond Taxi • Offizielle Unternehmensseite</div>
+          <h1>Starkes Taxi-Design für <span class="gold">Retro City</span></h1>
+          <p>
+            Willkommen auf der offiziellen Seite von Diamond Taxi. Hier findest du alle wichtigen Informationen zum Unternehmen, zur Leitung, zum Standort, zur Preisstruktur und zu den offiziellen Kontaktwegen für Fragen, Bewerbungen und Beschwerden. Die Seite ist bewusst klar aufgebaut, hochwertig gestaltet und frei von unpassenden oder falschen Buttons.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#kontakt">Kontaktbereich öffnen</a>
+            <a class="btn btn-secondary" href="#standort">Standort ansehen</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>4 $</strong>
+              <span>pro Meter mit Fahrgast</span>
+            </div>
+            <div class="stat">
+              <strong>100 $</strong>
+              <span>Anfahrt innerhalb der Stadt</span>
+            </div>
+            <div class="stat">
+              <strong>750 $</strong>
+              <span>Grenzübergänge zzgl. Meterpreis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-overlay"></div>
+          <div class="hero-badge">
+            <img src="logo.png" alt="Diamond Taxi Logo klein">
+            <div>
+              <strong>Diamond Taxi</strong><br>
+              <span class="muted">Retro City</span>
+            </div>
+          </div>
+          <div class="hero-location">
+            <h3>Unternehmensstandort</h3>
+            <p>Das Standortbild des Unternehmens ist direkt in das Design eingebunden und zeigt den offiziellen Sitz von Diamond Taxi in Retro City.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueberblick">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Unternehmensüberblick</h2>
+            <p>Diamond Taxi steht für einen professionellen Auftritt, klare Abläufe und eine starke Außenwirkung. Diese Seite dient als saubere und zentrale Anlaufstelle für Besucher, Interessenten, Bewerber und Personen mit Rückfragen oder Beschwerden.</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">💎</div>
+            <h3>Markenauftritt</h3>
+            <p>Das Design orientiert sich konsequent an Schwarz, Gold und hochwertigen Kontrasten und passt damit perfekt zur Identität von Diamond Taxi.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🏢</div>
+            <h3>Unternehmen</h3>
+            <p>Alle Kerninformationen sind übersichtlich aufgebaut: Leitung, Standort, Preisstruktur, Kontaktwege und öffentliche Informationen.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📨</div>
+            <h3>Kontaktwege</h3>
+            <p>Über das Formular sind ausschließlich allgemeine Fragen, Bewerbungen und Beschwerden möglich – keine Fahrtanfragen.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📍</div>
+            <h3>Standortbild</h3>
+            <p>Der offizielle Standort wird direkt mit dem bereitgestellten Bild dargestellt und nicht mehr nur abstrakt beschrieben.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leitung">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Leitungs-Team</h2>
+            <p>Die Führungsebene von Diamond Taxi ist hier klar und sauber dargestellt, damit Besucher sofort die wichtigsten Ansprechpartner des Unternehmens erkennen.</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="card team-card">
+            <div class="avatar">TE</div>
+            <h3>Tommy Elechandro</h3>
+            <span class="role">CEO</span>
+            <p>Leitet Diamond Taxi auf höchster Ebene und verantwortet die strategische Ausrichtung sowie die öffentliche Präsenz des Unternehmens.</p>
+          </article>
+          <article class="card team-card">
+            <div class="avatar">CS</div>
+            <h3>Christian Steiner</h3>
+            <span class="role">Geschäftsleitung</span>
+            <p>Verantwortlich für Organisation, Struktur, interne Abläufe und die operative Leitung des Unternehmensalltags.</p>
+          </article>
+          <article class="card team-card">
+            <div class="avatar">WM</div>
+            <h3>Wladimir Makarof</h3>
+            <span class="role">Personalleitung</span>
+            <p>Zuständig für personelle Themen, Bewerbungsprozesse, Einbindung neuer Mitglieder und interne Entwicklung.</p>
+          </article>
+          <article class="card team-card">
+            <div class="avatar">VK</div>
+            <h3>Valeria Kalash</h3>
+            <span class="role">Personalleitung</span>
+            <p>Begleitet Bewerbungen, interne Strukturfragen und die personelle Weiterentwicklung des Diamond Taxi Teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preise">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Preisstruktur</h2>
+            <p>Die Preisangaben sind jetzt exakt an deine Vorgaben angepasst und klar verständlich dargestellt.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card pricing-card">
+            <div class="tag">Standard</div>
+            <h3>Anfahrt</h3>
+            <div class="price"><strong>100 $</strong><span class="muted">Grundpreis</span></div>
+            <p>Für die Anfahrt wird ein fester Grundpreis von 100 $ berechnet.</p>
+            <div class="list">
+              <div>Fester Einstiegspreis</div>
+              <div>Klar und leicht verständlich</div>
+              <div>Zusätzlich 4 $ pro Meter mit Fahrgast</div>
+            </div>
+          </article>
+          <article class="card pricing-card">
+            <div class="tag">Fahrpreis</div>
+            <h3>Meterpreis</h3>
+            <div class="price"><strong>4 $</strong><span class="muted">pro Meter</span></div>
+            <p>Ab dem Moment, in dem sich der Fahrgast im Fahrzeug befindet, werden 4 $ pro Meter berechnet.</p>
+            <div class="list">
+              <div>Gültig innerhalb der Stadt</div>
+              <div>Gültig bei längeren Strecken</div>
+              <div>Transparent und einheitlich</div>
+            </div>
+          </article>
+          <article class="card pricing-card">
+            <div class="tag">Besonderer Einsatz</div>
+            <h3>Grenzübergänge</h3>
+            <div class="price"><strong>750 $</strong><span class="muted">zzgl. 4 $ / Meter</span></div>
+            <p>Bei Grenzübergängen fällt ein fester Preis von 750 $ an. Zusätzlich werden weiterhin 4 $ pro Meter mit Fahrgast berechnet.</p>
+            <div class="list">
+              <div>750 $ Grundpreis</div>
+              <div>Zusätzlich 4 $ pro Meter</div>
+              <div>Saubere Sonderregelung für Grenzübergänge</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="standort">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Standort</h2>
+            <p>Der Standort von Diamond Taxi wird direkt mit dem von dir bereitgestellten Bild dargestellt und ist ein fester Bestandteil dieser neuen Seite.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="card location-photo">
+            <img src="standort.png" alt="Standort von Diamond Taxi in Retro City">
+          </article>
+          <article class="card">
+            <h3>Offizieller Unternehmenssitz</h3>
+            <p>Dieses Bild zeigt den sichtbaren Außenbereich des Unternehmens und bildet den Standort nun korrekt und hochwertig auf der Website ab.</p>
+            <div class="list">
+              <div>Realer Standort direkt im Design eingebunden</div>
+              <div>Keine abstrakte Kartenansicht mehr</div>
+              <div>Starker Wiedererkennungswert durch eigenes Gebäude</div>
+              <div>Passend zum schwarzen und goldenen Designkonzept</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Kontakt</h2>
+            <p>Über dieses Formular sind nur drei Arten von Nachrichten vorgesehen: allgemeine Fragen, Bewerbungen und Beschwerden. Telefonnummern und Funkangaben werden bewusst nicht angezeigt.</p>
+          </div>
+        </div>
+        <div class="contact-wrap">
+          <article class="card">
+            <h3>Wofür ist das Formular gedacht?</h3>
+            <div class="list">
+              <div>Allgemeine Fragen zum Unternehmen</div>
+              <div>Bewerbungen an die Personalleitung</div>
+              <div>Beschwerden oder offizielles Feedback</div>
+              <div>Webhook-Versand direkt aus dem Formular</div>
+            </div>
+            <p class="note">Trage im Code nur noch deine Discord-Webhook-URL ein. Weitere falsche oder unpassende Buttons wurden entfernt.</p>
+          </article>
+
+          <article class="card">
+            <h3>Nachricht senden</h3>
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Dein Name" required>
+              <input type="text" id="contact" placeholder="Dein Kontaktweg" required>
+              <select id="subject" required>
+                <option value="">Anliegen auswählen</option>
+                <option>Allgemeine Frage</option>
+                <option>Bewerbung</option>
+                <option>Beschwerde</option>
+              </select>
+              <textarea id="message" placeholder="Deine Nachricht" required></textarea>
+              <button class="btn btn-primary" type="submit">Nachricht absenden</button>
+              <p id="formStatus" class="note"></p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Häufige Fragen</h2>
+            <p>Die wichtigsten Punkte sind hier nochmals kompakt zusammengefasst.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <details>
+            <summary>Kann ich über diese Seite eine Fahrt bestellen?</summary>
+            <p>Nein. Diese Seite ist bewusst als Unternehmensseite aufgebaut. Das Formular ist nur für Fragen, Bewerbungen und Beschwerden vorgesehen.</p>
+          </details>
+          <details>
+            <summary>Wer gehört zur Leitung von Diamond Taxi?</summary>
+            <p>CEO ist Tommy Elechandro, die Geschäftsleitung liegt bei Christian Steiner und die Personalleitung bei Wladimir Makarof sowie Valeria Kalash.</p>
+          </details>
+          <details>
+            <summary>Wie sieht die Preisstruktur aus?</summary>
+            <p>Anfahrt 100 $. Danach 4 $ pro Meter mit Fahrgast. Bei Grenzübergängen 750 $ plus zusätzlich 4 $ pro Meter.</p>
+          </details>
+          <details>
+            <summary>Wie nutze ich das Logo und das Standortbild?</summary>
+            <p>Lege die beiden Dateien in deinem GitHub-Projekt als <strong>logo.png</strong> und <strong>standort.png</strong> ab, damit die Seite sie korrekt lädt.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <strong>Diamond Taxi</strong> <span class="muted">| Retro City</span>
+          <div class="muted">Offizielle Unternehmensseite mit Leitung, Standort, Preisstruktur und Kontakt.</div>
+        </div>
+        <div class="muted">Für GitHub als <span class="gold">index.html</span> vorbereitet</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1485311222680387635/JHnxztYSFwWgvYSj_jmATeRhddMtPYSNNW0G7QzuPeJ1fVgBx1v42jOdyNZ5o0xL9FYR";
+
+    const form = document.getElementById("contactForm");
+    const statusText = document.getElementById("formStatus");
+
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const contact = document.getElementById("contact").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !contact || !subject || !message) {
+          statusText.textContent = "Bitte fülle alle Felder vollständig aus.";
+          return;
+        }
+
+        if (WEBHOOK_URL === "HIER_DEIN_DISCORD_WEBHOOK_EINFUEGEN") {
+          statusText.textContent = "Bitte trage zuerst deine Discord-Webhook-URL im Code ein.";
+          return;
+        }
+
+        statusText.textContent = "Nachricht wird gesendet...";
+
+        const payload = {
+          embeds: [
+            {
+              title: "Neue Diamond Taxi Nachricht",
+              description: "Es wurde eine neue Nachricht über die Unternehmensseite gesendet.",
+              color: 16763955,
+              fields: [
+                { name: "Name", value: name },
+                { name: "Kontaktweg", value: contact },
+                { name: "Kategorie", value: subject },
+                { name: "Nachricht", value: message.length > 1024 ? message.slice(0, 1021) + "..." : message }
+              ],
+              footer: { text: "Diamond Taxi • Retro City" },
+              timestamp: new Date().toISOString()
+            }
+          ]
+        };
+
+        try {
+          const response = await fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error("Webhook konnte nicht erreicht werden.");
+          }
+
+          form.reset();
+          statusText.textContent = "Deine Nachricht wurde erfolgreich übermittelt.";
+        } catch (error) {
+          statusText.textContent = "Fehler beim Senden. Prüfe die Webhook-URL oder nutze für GitHub Pages einen Proxy-Service.";
+          console.error(error);
+        }
+      });
+    }
+  </script>
+</body>
 </html>
