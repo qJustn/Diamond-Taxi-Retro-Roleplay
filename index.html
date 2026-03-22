@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diamond Taxi | Retro City</title>
-  <meta name="description" content="Offizielle Unternehmensseite von Diamond Taxi in Retro City – Leitung, Standort, Preise, Kontakt, Bewerbung und Beschwerden." />
+  <meta name="description" content="Offizielle Unternehmensseite von Diamond Taxi in Retro City – Leitung, Standort, Preise, Mitarbeiter des Monats, Kontakt, Bewerbung und Beschwerden." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
     :root {
       --bg: #05070b;
       --bg-2: #0b0f16;
-      --panel: rgba(15, 18, 27, 0.86);
-      --panel-2: rgba(19, 24, 34, 0.94);
+      --panel: rgba(15, 18, 27, 0.88);
+      --panel-2: rgba(18, 22, 32, 0.96);
       --line: rgba(255, 214, 76, 0.18);
       --text: #f8fafc;
       --muted: #b4bcc9;
@@ -122,8 +122,7 @@
 
     .hero-copy,
     .hero-visual,
-    .card,
-    .glass {
+    .card {
       background: var(--panel);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius-xl);
@@ -338,7 +337,7 @@
       font-size: 1.4rem;
     }
 
-    .team-card {
+    .team-card, .employee-card {
       position: relative;
       overflow: hidden;
     }
@@ -368,6 +367,24 @@
       color: #111;
       margin-bottom: 16px;
       background: linear-gradient(135deg, var(--gold), #fff0a6);
+    }
+
+    .employee-card .avatar {
+      background: linear-gradient(135deg, #fff0a6, var(--gold-2));
+    }
+
+    .award {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(114, 199, 255, 0.1);
+      border: 1px solid rgba(114, 199, 255, 0.16);
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 10px;
     }
 
     .pricing-card {
@@ -545,6 +562,7 @@
       <nav class="nav-links">
         <a href="#ueberblick">Überblick</a>
         <a href="#leitung">Leitung</a>
+        <a href="#mitarbeiter">Mitarbeiter des Monats</a>
         <a href="#preise">Preise</a>
         <a href="#standort">Standort</a>
         <a href="#kontakt">Kontakt</a>
@@ -558,13 +576,13 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Diamond Taxi • Offizielle Unternehmensseite</div>
-          <h1>Starkes Taxi-Design für <span class="gold">Retro City</span></h1>
+          <h1>Premium Taxi-Service für <span class="gold">Retro City</span></h1>
           <p>
-            Willkommen auf der offiziellen Seite von Diamond Taxi. Hier findest du alle wichtigen Informationen zum Unternehmen, zur Leitung, zum Standort, zur Preisstruktur und zu den offiziellen Kontaktwegen für Fragen, Bewerbungen und Beschwerden. Die Seite ist bewusst klar aufgebaut, hochwertig gestaltet und frei von unpassenden oder falschen Buttons.
+            Willkommen auf der offiziellen Seite von Diamond Taxi. Hier findest du alle wichtigen Informationen zum Unternehmen, zur Leitung, zum Standort, zur Preisstruktur, zu den aktuellen Top-Mitarbeitern und zu den offiziellen Kontaktwegen für Fragen, Bewerbungen und Beschwerden. Die Seite ist komplett neu aufgebaut und bewusst klar, modern und hochwertig gestaltet.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#kontakt">Kontaktbereich öffnen</a>
-            <a class="btn btn-secondary" href="#standort">Standort ansehen</a>
+            <a class="btn btn-secondary" href="#mitarbeiter">Top-Mitarbeiter ansehen</a>
           </div>
           <div class="hero-stats">
             <div class="stat">
@@ -616,7 +634,7 @@
           <article class="card">
             <div class="icon">🏢</div>
             <h3>Unternehmen</h3>
-            <p>Alle Kerninformationen sind übersichtlich aufgebaut: Leitung, Standort, Preisstruktur, Kontaktwege und öffentliche Informationen.</p>
+            <p>Alle Kerninformationen sind übersichtlich aufgebaut: Leitung, Standort, Preisstruktur, Mitarbeiter des Monats und offizielle Kontaktwege.</p>
           </article>
           <article class="card">
             <div class="icon">📨</div>
@@ -626,7 +644,7 @@
           <article class="card">
             <div class="icon">📍</div>
             <h3>Standortbild</h3>
-            <p>Der offizielle Standort wird direkt mit dem bereitgestellten Bild dargestellt und nicht mehr nur abstrakt beschrieben.</p>
+            <p>Der offizielle Standort wird direkt mit dem bereitgestellten Bild dargestellt und nicht nur abstrakt beschrieben.</p>
           </article>
         </div>
       </div>
@@ -669,12 +687,49 @@
       </div>
     </section>
 
+    <section id="mitarbeiter">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Mitarbeiter des Monats</h2>
+            <p>Diese Mitarbeitenden gehören aktuell zu den stärksten Kräften bei Diamond Taxi und werden hier sichtbar hervorgehoben.</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="card employee-card">
+            <div class="avatar">JB</div>
+            <h3>Joe Barbaro</h3>
+            <span class="award">Top-Mitarbeiter</span>
+            <p>Aktuell einer der besten Mitarbeitenden des Unternehmens und ein wichtiger Teil des starken Diamond Taxi Teams.</p>
+          </article>
+          <article class="card employee-card">
+            <div class="avatar">RQ</div>
+            <h3>Rafa Quintero</h3>
+            <span class="award">Top-Mitarbeiter</span>
+            <p>Zeigt starke Leistung, verlässliche Präsenz und trägt wesentlich zum professionellen Auftreten von Diamond Taxi bei.</p>
+          </article>
+          <article class="card employee-card">
+            <div class="avatar">JA</div>
+            <h3>Jeff Adil</h3>
+            <span class="award">Top-Mitarbeiter</span>
+            <p>Gehört aktuell zu den besten Mitarbeitenden und überzeugt durch Engagement, Auftreten und starke Leistungen.</p>
+          </article>
+          <article class="card employee-card">
+            <div class="avatar">CR</div>
+            <h3>Cüneyt Rince</h3>
+            <span class="award">Top-Mitarbeiter</span>
+            <p>Wird für seine aktuelle Leistung besonders hervorgehoben und zählt momentan zu den wertvollsten Kräften im Unternehmen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="preise">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Preisstruktur</h2>
-            <p>Die Preisangaben sind jetzt exakt an deine Vorgaben angepasst und klar verständlich dargestellt.</p>
+            <p>Die Preisangaben sind exakt an deine Vorgaben angepasst und klar verständlich dargestellt.</p>
           </div>
         </div>
         <div class="grid-3">
@@ -720,7 +775,7 @@
         <div class="section-head">
           <div>
             <h2>Standort</h2>
-            <p>Der Standort von Diamond Taxi wird direkt mit dem von dir bereitgestellten Bild dargestellt und ist ein fester Bestandteil dieser neuen Seite.</p>
+            <p>Der Standort von Diamond Taxi wird direkt mit dem bereitgestellten Bild dargestellt und ist ein fester Bestandteil dieser neuen Seite.</p>
           </div>
         </div>
         <div class="grid-2">
@@ -732,7 +787,7 @@
             <p>Dieses Bild zeigt den sichtbaren Außenbereich des Unternehmens und bildet den Standort nun korrekt und hochwertig auf der Website ab.</p>
             <div class="list">
               <div>Realer Standort direkt im Design eingebunden</div>
-              <div>Keine abstrakte Kartenansicht mehr</div>
+              <div>Keine abstrakte Kartenansicht</div>
               <div>Starker Wiedererkennungswert durch eigenes Gebäude</div>
               <div>Passend zum schwarzen und goldenen Designkonzept</div>
             </div>
@@ -752,6 +807,7 @@
         <div class="contact-wrap">
           <article class="card">
             <h3>Wofür ist das Formular gedacht?</h3>
+            <p>Das Formular dient nicht für Fahrten oder spontane Bestellungen. Es ist ausschließlich ein offizieller Kontaktweg für Themen rund um Diamond Taxi als Unternehmen.</p>
             <div class="list">
               <div>Allgemeine Fragen zum Unternehmen</div>
               <div>Bewerbungen an die Personalleitung</div>
@@ -816,7 +872,7 @@
       <div class="footer-card">
         <div>
           <strong>Diamond Taxi</strong> <span class="muted">| Retro City</span>
-          <div class="muted">Offizielle Unternehmensseite mit Leitung, Standort, Preisstruktur und Kontakt.</div>
+          <div class="muted">Offizielle Unternehmensseite mit Leitung, Standort, Preisstruktur, Top-Mitarbeitern und Kontakt.</div>
         </div>
         <div class="muted">Für GitHub als <span class="gold">index.html</span> vorbereitet</div>
       </div>
@@ -824,7 +880,7 @@
   </footer>
 
   <script>
-    const WEBHOOK_URL = "https://discord.com/api/webhooks/1485311222680387635/JHnxztYSFwWgvYSj_jmATeRhddMtPYSNNW0G7QzuPeJ1fVgBx1v42jOdyNZ5o0xL9FYR";
+    const WEBHOOK_URL = "HIER_DEIN_DISCORD_WEBHOOK_EINFUEGEN";
 
     const form = document.getElementById("contactForm");
     const statusText = document.getElementById("formStatus");
@@ -843,7 +899,7 @@
           return;
         }
 
-        if (WEBHOOK_URL === "HIER_DEIN_DISCORD_WEBHOOK_EINFUEGEN") {
+        if (WEBHOOK_URL === "https://discord.com/api/webhooks/1485311222680387635/JHnxztYSFwWgvYSj_jmATeRhddMtPYSNNW0G7QzuPeJ1fVgBx1v42jOdyNZ5o0xL9FYR") {
           statusText.textContent = "Bitte trage zuerst deine Discord-Webhook-URL im Code ein.";
           return;
         }
