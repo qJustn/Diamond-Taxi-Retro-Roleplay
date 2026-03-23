@@ -4,28 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diamond Taxi | Premium Portal</title>
-  <meta name="description" content="Diamond Taxi – Premium Unternehmensportal für Retro City mit Theme Switcher, Premium UI, Bewerbungs-Funnel und interaktivem Design." />
+  <meta name="description" content="Diamond Taxi Premium Portal für Retro City." />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#090909;
-      --bg-2:#121212;
-      --panel:rgba(20,20,20,.72);
-      --panel-2:rgba(16,16,16,.9);
-      --text:#f5f7fb;
-      --muted:#acb2c0;
+      --bg:#0a0907;
+      --bg-2:#14110b;
+      --panel:rgba(21,17,10,.72);
+      --panel-2:rgba(14,11,7,.93);
+      --text:#f7f7fb;
+      --muted:#adb2bd;
       --line:rgba(255,255,255,.08);
       --accent:#ffd54a;
       --accent-2:#ffb800;
-      --accent-soft:rgba(255,213,74,.18);
       --accent-rgb:255,213,74;
-      --danger:#ff6c8a;
-      --success:#65ffb3;
+      --success:#71ffb7;
+      --danger:#ff7a98;
       --shadow:0 30px 80px rgba(0,0,0,.42);
-      --radius-xl:30px;
+      --radius-xl:32px;
       --radius-lg:24px;
       --radius-md:18px;
       --max:1380px;
@@ -42,8 +41,8 @@
       font-family:'Outfit',system-ui,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(700px 400px at 10% 0%, rgba(var(--accent-rgb), .12), transparent 60%),
-        radial-gradient(700px 400px at 100% 10%, rgba(var(--accent-rgb), .08), transparent 60%),
+        radial-gradient(800px 500px at 10% 0%, rgba(var(--accent-rgb), .10), transparent 60%),
+        radial-gradient(700px 420px at 100% 10%, rgba(var(--accent-rgb), .07), transparent 60%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       overflow-x:hidden;
       cursor:none;
@@ -55,7 +54,7 @@
       inset:0;
       pointer-events:none;
       z-index:0;
-      background:radial-gradient(420px circle at var(--cursor-x) var(--cursor-y), rgba(var(--accent-rgb), .08), transparent 56%);
+      background:radial-gradient(430px circle at var(--cursor-x) var(--cursor-y), rgba(var(--accent-rgb), .08), transparent 56%);
     }
 
     body::after{
@@ -67,65 +66,68 @@
       background-image:
         linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-      background-size:70px 70px;
-      mask-image:linear-gradient(180deg, rgba(255,255,255,.32), transparent 85%);
+      background-size:72px 72px;
+      mask-image:linear-gradient(180deg, rgba(255,255,255,.22), transparent 88%);
     }
 
     body.theme-gold{
-      --bg:#070707;
-      --bg-2:#12110b;
-      --panel:rgba(22,18,11,.72);
-      --panel-2:rgba(18,14,9,.9);
+      --bg:#0a0907;
+      --bg-2:#14110b;
+      --panel:rgba(21,17,10,.72);
+      --panel-2:rgba(14,11,7,.93);
       --accent:#ffd54a;
       --accent-2:#ffb800;
-      --accent-soft:rgba(255,213,74,.18);
       --accent-rgb:255,213,74;
     }
 
     body.theme-blue{
-      --bg:#050912;
-      --bg-2:#0c1320;
-      --panel:rgba(13,19,35,.72);
-      --panel-2:rgba(10,15,28,.92);
-      --accent:#54d3ff;
-      --accent-2:#278eff;
-      --accent-soft:rgba(84,211,255,.18);
-      --accent-rgb:84,211,255;
+      --bg:#050c15;
+      --bg-2:#0c1726;
+      --panel:rgba(12,22,37,.72);
+      --panel-2:rgba(8,15,26,.93);
+      --accent:#58d8ff;
+      --accent-2:#2a91ff;
+      --accent-rgb:88,216,255;
     }
 
     body.theme-pink{
-      --bg:#0d0711;
-      --bg-2:#170b18;
-      --panel:rgba(28,14,31,.72);
-      --panel-2:rgba(20,10,23,.92);
-      --accent:#ff71d6;
-      --accent-2:#ff45b6;
-      --accent-soft:rgba(255,113,214,.18);
-      --accent-rgb:255,113,214;
+      --bg:#0e0710;
+      --bg-2:#180b1b;
+      --panel:rgba(27,14,29,.72);
+      --panel-2:rgba(19,10,20,.93);
+      --accent:#ff73d8;
+      --accent-2:#ff46b8;
+      --accent-rgb:255,115,216;
     }
 
     body.theme-executive{
-      --bg:#06080a;
-      --bg-2:#0f1317;
-      --panel:rgba(15,19,22,.74);
-      --panel-2:rgba(11,14,17,.92);
-      --accent:#d5e3ff;
-      --accent-2:#93b9ff;
-      --accent-soft:rgba(147,185,255,.15);
-      --accent-rgb:147,185,255;
+      --bg:#07090c;
+      --bg-2:#12171d;
+      --panel:rgba(15,19,24,.72);
+      --panel-2:rgba(10,13,17,.93);
+      --accent:#d9e4ff;
+      --accent-2:#95b9ff;
+      --accent-rgb:149,185,255;
     }
 
-    a,button,input,textarea,select,summary{cursor:none}
+    body.reduced-motion *,
+    body.reduced-motion *::before,
+    body.reduced-motion *::after{
+      animation:none !important;
+      transition:none !important;
+      scroll-behavior:auto !important;
+    }
+
+    a,button,input,textarea,select{cursor:none}
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
     button,input,textarea,select{font:inherit}
 
-    .cursor-dot,
-    .cursor-ring{
+    .cursor-dot,.cursor-ring{
       position:fixed;
       top:0;
       left:0;
-      transform:translate(-50%, -50%);
+      transform:translate(-50%,-50%);
       pointer-events:none;
       z-index:9999;
       border-radius:50%;
@@ -135,15 +137,15 @@
       width:8px;
       height:8px;
       background:var(--accent);
-      box-shadow:0 0 18px rgba(var(--accent-rgb), .8);
+      box-shadow:0 0 18px rgba(var(--accent-rgb), .85);
     }
 
     .cursor-ring{
       width:34px;
       height:34px;
-      border:1px solid rgba(255,255,255,.24);
+      border:1px solid rgba(255,255,255,.25);
       background:rgba(255,255,255,.03);
-      backdrop-filter:blur(6px);
+      backdrop-filter:blur(8px);
       transition:width .18s ease,height .18s ease,border-color .18s ease,background .18s ease;
     }
 
@@ -152,181 +154,6 @@
       height:56px;
       border-color:rgba(var(--accent-rgb), .8);
       background:rgba(var(--accent-rgb), .08);
-    }
-
-    .splash,
-    .preloader{
-      position:fixed;
-      inset:0;
-      z-index:7000;
-      display:grid;
-      place-items:center;
-      background:
-        radial-gradient(circle at center, rgba(var(--accent-rgb), .14), transparent 22%),
-        linear-gradient(180deg, #040404 0%, #0b0b0b 100%);
-      transition:opacity .7s ease, visibility .7s ease;
-    }
-
-    .splash.hidden,
-    .preloader.hidden{
-      opacity:0;
-      visibility:hidden;
-    }
-
-    .splash-box,
-    .preloader-box{
-      text-align:center;
-      position:relative;
-      width:min(92vw, 560px);
-    }
-
-    .logo-stage{
-      position:relative;
-      width:170px;
-      height:170px;
-      margin:0 auto 24px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-    }
-
-    .logo-stage::before{
-      content:"";
-      position:absolute;
-      inset:-18px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(var(--accent-rgb), .24), transparent 60%);
-      filter:blur(18px);
-      animation:pulseGlow 2s ease-in-out infinite;
-    }
-
-    .diamond-ring{
-      position:absolute;
-      inset:-12px;
-      border-radius:50%;
-      border:1px solid rgba(var(--accent-rgb), .45);
-      box-shadow:0 0 0 10px rgba(var(--accent-rgb), .04), 0 0 34px rgba(var(--accent-rgb), .18);
-      animation:spinRing 9s linear infinite;
-    }
-
-    .scanner-line{
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      overflow:hidden;
-      pointer-events:none;
-    }
-
-    .scanner-line::before{
-      content:"";
-      position:absolute;
-      top:-20%;
-      left:-10%;
-      width:120%;
-      height:24%;
-      background:linear-gradient(180deg, transparent, rgba(var(--accent-rgb), .36), transparent);
-      filter:blur(6px);
-      animation:scanVertical 2.8s ease-in-out infinite;
-    }
-
-    .glitch-logo{
-      width:112px;
-      position:relative;
-      z-index:2;
-      filter:drop-shadow(0 0 22px rgba(var(--accent-rgb), .45));
-      animation:glitchLogo 3.6s infinite;
-    }
-
-    .splash h1,
-    .preloader h1{
-      margin:0 0 10px;
-      font-size:clamp(2.3rem, 7vw, 4.5rem);
-      letter-spacing:-.06em;
-      line-height:.95;
-    }
-
-    .grad{
-      background:linear-gradient(90deg, #fff, var(--accent), #fff);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .splash p,
-    .preloader p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:1rem;
-    }
-
-    .flash{
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle, rgba(255,255,255,.18), transparent 45%);
-      mix-blend-mode:screen;
-      animation:flashIn .95s ease-out 1;
-      pointer-events:none;
-    }
-
-    .preloader-bar{
-      width:min(88vw, 280px);
-      height:10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.08);
-      overflow:hidden;
-      margin:18px auto 12px;
-    }
-
-    .preloader-bar span{
-      display:block;
-      height:100%;
-      width:0%;
-      border-radius:inherit;
-      background:linear-gradient(90deg, var(--accent-2), var(--accent), #fff);
-      box-shadow:0 0 22px rgba(var(--accent-rgb), .4);
-      animation:loadBar 1.9s ease forwards;
-    }
-
-    .preloader small{
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      font-size:.78rem;
-    }
-
-    @keyframes loadBar{
-      from{width:0%}
-      to{width:100%}
-    }
-
-    @keyframes pulseGlow{
-      0%,100%{transform:scale(1);opacity:.8}
-      50%{transform:scale(1.06);opacity:1}
-    }
-
-    @keyframes spinRing{
-      to{transform:rotate(360deg)}
-    }
-
-    @keyframes scanVertical{
-      0%{transform:translateY(-160%)}
-      100%{transform:translateY(300%)}
-    }
-
-    @keyframes glitchLogo{
-      0%, 90%, 100%{transform:translate(0)}
-      92%{transform:translate(-2px, 1px)}
-      94%{transform:translate(2px, -1px)}
-      96%{transform:translate(-1px, -1px)}
-      98%{transform:translate(1px, 1px)}
-    }
-
-    @keyframes flashIn{
-      0%{opacity:0}
-      20%{opacity:1}
-      100%{opacity:0}
     }
 
     .particles{
@@ -343,16 +170,163 @@
       height:4px;
       border-radius:50%;
       background:rgba(var(--accent-rgb), .45);
-      box-shadow:0 0 10px rgba(var(--accent-rgb), .5);
+      box-shadow:0 0 10px rgba(var(--accent-rgb), .45);
       animation:floatParticle linear infinite;
     }
 
     @keyframes floatParticle{
-      0%{transform:translate3d(0,0,0) scale(.9); opacity:0}
+      0%{transform:translate3d(0,0,0) scale(.9);opacity:0}
       10%{opacity:1}
       90%{opacity:.8}
-      100%{transform:translate3d(40px,-120px,0) scale(1.35); opacity:0}
+      100%{transform:translate3d(40px,-120px,0) scale(1.35);opacity:0}
     }
+
+    .splash,.preloader{
+      position:fixed;
+      inset:0;
+      z-index:7000;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at center, rgba(var(--accent-rgb), .14), transparent 22%),
+        linear-gradient(180deg, #040404 0%, #0b0b0b 100%);
+      transition:opacity .7s ease, visibility .7s ease;
+    }
+
+    .splash.hidden,.preloader.hidden{
+      opacity:0;
+      visibility:hidden;
+    }
+
+    .splash-box,.preloader-box{
+      width:min(92vw, 560px);
+      text-align:center;
+      position:relative;
+    }
+
+    .logo-stage{
+      position:relative;
+      width:170px;
+      height:170px;
+      margin:0 auto 24px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+    }
+
+    .logo-stage::before{
+      content:"";
+      position:absolute;
+      inset:-16px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(var(--accent-rgb), .24), transparent 60%);
+      filter:blur(16px);
+      animation:pulseGlow 2s ease-in-out infinite;
+    }
+
+    .diamond-ring{
+      position:absolute;
+      inset:-12px;
+      border-radius:50%;
+      border:1px solid rgba(var(--accent-rgb), .42);
+      box-shadow:0 0 0 10px rgba(var(--accent-rgb), .04), 0 0 34px rgba(var(--accent-rgb), .15);
+      animation:spinRing 10s linear infinite;
+    }
+
+    .scanner-line{
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      overflow:hidden;
+    }
+
+    .scanner-line::before{
+      content:"";
+      position:absolute;
+      top:-20%;
+      left:-10%;
+      width:120%;
+      height:24%;
+      background:linear-gradient(180deg, transparent, rgba(var(--accent-rgb), .34), transparent);
+      filter:blur(6px);
+      animation:scanVertical 2.7s ease-in-out infinite;
+    }
+
+    .glitch-logo{
+      width:112px;
+      position:relative;
+      z-index:2;
+      filter:drop-shadow(0 0 22px rgba(var(--accent-rgb), .42));
+      animation:glitchLogo 3.5s infinite;
+    }
+
+    .flash{
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle, rgba(255,255,255,.18), transparent 45%);
+      mix-blend-mode:screen;
+      animation:flashIn .9s ease-out 1;
+      pointer-events:none;
+    }
+
+    .splash h1,.preloader h1{
+      margin:0 0 10px;
+      font-size:clamp(2.4rem, 7vw, 4.6rem);
+      line-height:.95;
+      letter-spacing:-.06em;
+    }
+
+    .grad{
+      background:linear-gradient(90deg, #fff, var(--accent), #fff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .splash p,.preloader p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .preloader-bar{
+      width:min(88vw, 290px);
+      height:10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      margin:18px auto 12px;
+    }
+
+    .preloader-bar span{
+      display:block;
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg, var(--accent-2), var(--accent), #fff3bf);
+      box-shadow:0 0 20px rgba(var(--accent-rgb), .4);
+      animation:loadBar 1.9s ease forwards;
+    }
+
+    .preloader small{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.78rem;
+    }
+
+    @keyframes loadBar{from{width:0%}to{width:100%}}
+    @keyframes pulseGlow{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.06);opacity:1}}
+    @keyframes spinRing{to{transform:rotate(360deg)}}
+    @keyframes scanVertical{0%{transform:translateY(-160%)}100%{transform:translateY(300%)}}
+    @keyframes glitchLogo{
+      0%,90%,100%{transform:translate(0)}
+      92%{transform:translate(-2px,1px)}
+      94%{transform:translate(2px,-1px)}
+      96%{transform:translate(-1px,-1px)}
+      98%{transform:translate(1px,1px)}
+    }
+    @keyframes flashIn{0%{opacity:0}20%{opacity:1}100%{opacity:0}}
 
     .container{
       width:min(calc(100% - 32px), var(--max));
@@ -397,7 +371,9 @@
       display:flex;
       align-items:center;
       gap:14px;
-      min-width:0;
+      background:none;
+      border:0;
+      color:inherit;
     }
 
     .brand-badge{
@@ -406,9 +382,8 @@
       border-radius:18px;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg, rgba(var(--accent-rgb), .18), rgba(255,255,255,.05));
+      background:linear-gradient(135deg, rgba(var(--accent-rgb), .18), rgba(255,255,255,.04));
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 0 22px rgba(var(--accent-rgb), .14);
     }
 
     .brand-badge img{
@@ -419,19 +394,16 @@
     .brand-text{
       display:flex;
       flex-direction:column;
-      line-height:1.04;
+      line-height:1.05;
+      text-align:left;
     }
 
-    .brand-text strong{
-      font-size:1rem;
-      letter-spacing:.02em;
-    }
-
+    .brand-text strong{font-size:1rem}
     .brand-text span{
       color:var(--muted);
       font-size:.78rem;
-      text-transform:uppercase;
       letter-spacing:.15em;
+      text-transform:uppercase;
     }
 
     .topbar-right{
@@ -447,21 +419,20 @@
       align-items:center;
       gap:8px;
       flex-wrap:wrap;
-      justify-content:flex-end;
     }
 
     .nav-links button,
-    .theme-option,
-    .mini-btn{
+    .mini-btn,
+    .theme-option{
+      background:none;
       border:0;
       color:inherit;
-      background:none;
     }
 
     .nav-links button{
       padding:12px 16px;
       border-radius:16px;
-      color:#d9e0eb;
+      color:#d7dce8;
       font-weight:700;
       border:1px solid transparent;
       transition:var(--transition);
@@ -472,39 +443,35 @@
       background:linear-gradient(135deg, rgba(var(--accent-rgb), .16), rgba(255,255,255,.03));
       border-color:rgba(var(--accent-rgb), .24);
       color:#fff;
-      box-shadow:0 12px 28px rgba(var(--accent-rgb), .09);
+      box-shadow:0 12px 28px rgba(var(--accent-rgb), .08);
     }
 
     .mini-btn{
       min-height:46px;
       padding:0 16px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:#fff;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
       font-weight:800;
       transition:var(--transition);
     }
 
     .mini-btn:hover{
       transform:translateY(-2px);
-      border-color:rgba(var(--accent-rgb), .22);
-      box-shadow:0 14px 32px rgba(var(--accent-rgb), .1);
+      border-color:rgba(var(--accent-rgb), .24);
     }
 
-    .theme-switcher{
-      position:relative;
-    }
-
+    .theme-switcher{position:relative}
     .theme-menu{
       position:absolute;
       top:calc(100% + 10px);
       right:0;
-      min-width:250px;
+      min-width:260px;
       padding:12px;
       border-radius:24px;
       opacity:0;
@@ -525,10 +492,7 @@
       font-size:.95rem;
     }
 
-    .theme-grid{
-      display:grid;
-      gap:10px;
-    }
+    .theme-grid{display:grid;gap:10px}
 
     .theme-option{
       width:100%;
@@ -586,18 +550,17 @@
     }
 
     .panel.active{
+      position:relative;
       opacity:1;
       visibility:visible;
       transform:translateY(0) scale(1);
       pointer-events:auto;
-      position:relative;
     }
 
     .hero{
       display:grid;
       grid-template-columns:1.08fr .92fr;
       gap:18px;
-      align-items:stretch;
     }
 
     .hero-main,
@@ -619,7 +582,7 @@
       width:360px;
       height:360px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(var(--accent-rgb), .16), transparent 62%);
+      background:radial-gradient(circle, rgba(var(--accent-rgb), .14), transparent 62%);
       filter:blur(14px);
     }
 
@@ -629,9 +592,9 @@
       gap:10px;
       padding:10px 14px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04);
-      color:#eef5ff;
+      border:1px solid rgba(255,255,255,.08);
+      color:#eef4ff;
       font-weight:800;
       font-size:.8rem;
       text-transform:uppercase;
@@ -658,10 +621,10 @@
 
     .hero-sub{
       max-width:760px;
+      margin:0 0 26px;
       color:var(--muted);
       line-height:1.85;
       font-size:1.05rem;
-      margin:0 0 26px;
     }
 
     .cta-row{
@@ -687,14 +650,12 @@
       color:inherit;
     }
 
-    .btn:hover{
-      transform:translateY(-3px);
-    }
+    .btn:hover{transform:translateY(-3px)}
 
     .btn-primary{
       color:#0d0d0d;
-      background:linear-gradient(90deg, var(--accent-2), var(--accent), #fff6d6);
-      box-shadow:0 18px 38px rgba(var(--accent-rgb), .15);
+      background:linear-gradient(90deg, var(--accent-2), var(--accent), #fff3bf);
+      box-shadow:0 18px 38px rgba(var(--accent-rgb), .16);
     }
 
     .btn-secondary{
@@ -735,8 +696,8 @@
 
     .stat span{
       color:var(--muted);
-      line-height:1.45;
       font-size:.92rem;
+      line-height:1.45;
     }
 
     .hero-side{
@@ -879,7 +840,6 @@
       justify-content:space-between;
       align-items:end;
       gap:18px;
-      margin-bottom:4px;
     }
 
     .section-head h2{
@@ -944,9 +904,7 @@
       animation:dividerScan 3.4s linear infinite;
     }
 
-    @keyframes dividerScan{
-      to{left:100%}
-    }
+    @keyframes dividerScan{to{left:100%}}
 
     .grid-2,.grid-3,.grid-4{
       display:grid;
@@ -983,20 +941,16 @@
       position:absolute;
       inset:0;
       pointer-events:none;
-      background:
-        radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(var(--accent-rgb), .12), transparent 40%);
+      background:radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(var(--accent-rgb), .12), transparent 40%);
       opacity:0;
       transition:opacity .22s ease;
     }
 
-    .card:hover::after{
-      opacity:1;
-    }
-
+    .card:hover::after{opacity:1}
     .card:hover{
       transform:translateY(-6px);
       border-color:rgba(var(--accent-rgb), .24);
-      box-shadow:0 24px 70px rgba(0,0,0,.38), 0 0 26px rgba(var(--accent-rgb), .08);
+      box-shadow:0 24px 70px rgba(0,0,0,.38), 0 0 24px rgba(var(--accent-rgb), .08);
     }
 
     .icon{
@@ -1009,7 +963,6 @@
       font-size:1.3rem;
       background:linear-gradient(135deg, rgba(var(--accent-rgb), .18), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 0 18px rgba(var(--accent-rgb), .08);
     }
 
     .card h3{
@@ -1033,7 +986,7 @@
       margin-bottom:14px;
       font-weight:900;
       color:#0d0d0d;
-      background:linear-gradient(135deg, var(--accent), #fff2b0);
+      background:linear-gradient(135deg, var(--accent), #fff0bb);
       box-shadow:0 0 22px rgba(var(--accent-rgb), .18);
     }
 
@@ -1051,9 +1004,7 @@
       margin-bottom:12px;
     }
 
-    .employee-card{
-      padding:16px;
-    }
+    .employee-card{padding:16px}
 
     .employee-frame{
       position:relative;
@@ -1071,9 +1022,7 @@
       transition:transform .45s ease;
     }
 
-    .employee-card:hover .employee-photo{
-      transform:scale(1.05);
-    }
+    .employee-card:hover .employee-photo{transform:scale(1.05)}
 
     .employee-overlay{
       position:absolute;
@@ -1136,7 +1085,6 @@
       content:"✦";
       color:var(--accent);
       font-weight:900;
-      text-shadow:0 0 12px rgba(var(--accent-rgb), .35);
     }
 
     .split{
@@ -1149,55 +1097,16 @@
       position:relative;
       overflow:hidden;
       border-radius:32px;
+      min-height:460px;
     }
 
     .location-photo img{
       width:100%;
       height:100%;
-      min-height:360px;
+      min-height:460px;
       object-fit:cover;
       border-radius:inherit;
       border:1px solid rgba(255,255,255,.08);
-    }
-
-    .location-box{
-      position:absolute;
-      left:18px;
-      right:18px;
-      bottom:18px;
-      padding:18px;
-      border-radius:24px;
-      background:rgba(10,10,10,.65);
-      border:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(12px);
-    }
-
-    .timeline{
-      display:grid;
-      gap:14px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:66px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:18px;
-      border-radius:24px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.07);
-    }
-
-    .timeline-number{
-      width:66px;
-      height:66px;
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      color:#0d0d0d;
-      background:linear-gradient(135deg, var(--accent), #fff3bf);
-      box-shadow:0 0 18px rgba(var(--accent-rgb), .16);
     }
 
     .theme-showcase{
@@ -1219,10 +1128,7 @@
       border-color:rgba(var(--accent-rgb), .24);
     }
 
-    .theme-card h4{
-      margin:0 0 8px;
-    }
-
+    .theme-card h4{margin:0 0 8px}
     .theme-swatches{
       display:flex;
       gap:8px;
@@ -1250,8 +1156,8 @@
     }
 
     .faq-item.open{
-      box-shadow:0 18px 46px rgba(var(--accent-rgb), .08);
       border-color:rgba(var(--accent-rgb), .22);
+      box-shadow:0 18px 46px rgba(var(--accent-rgb), .08);
     }
 
     .faq-trigger{
@@ -1277,15 +1183,14 @@
       place-items:center;
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
-      transition:transform .28s ease, border-color .28s ease, color .28s ease;
       color:var(--accent);
+      transition:transform .28s ease, border-color .28s ease;
       flex:0 0 auto;
     }
 
     .faq-item.open .faq-icon{
       transform:rotate(45deg);
       border-color:rgba(var(--accent-rgb), .24);
-      box-shadow:0 0 18px rgba(var(--accent-rgb), .12);
     }
 
     .faq-content{
@@ -1298,10 +1203,7 @@
       grid-template-rows:1fr;
     }
 
-    .faq-inner{
-      overflow:hidden;
-    }
-
+    .faq-inner{overflow:hidden}
     .faq-inner p{
       margin:0;
       padding:0 22px 22px;
@@ -1313,11 +1215,6 @@
       display:grid;
       grid-template-columns:.9fr 1.1fr;
       gap:18px;
-    }
-
-    .note{
-      color:var(--muted);
-      line-height:1.75;
     }
 
     .mini-grid{
@@ -1351,9 +1248,7 @@
       transition:var(--transition);
     }
 
-    .discord-btn:hover{
-      transform:translateY(-3px);
-    }
+    .discord-btn:hover{transform:translateY(-3px)}
 
     .funnel{
       display:grid;
@@ -1381,7 +1276,6 @@
     .step.active{
       border-color:rgba(var(--accent-rgb), .24);
       background:rgba(var(--accent-rgb), .08);
-      box-shadow:0 0 20px rgba(var(--accent-rgb), .08);
     }
 
     .step-num{
@@ -1413,13 +1307,11 @@
       animation:fadeStep .28s ease;
     }
 
-    .step-panel.active{
-      display:block;
-    }
+    .step-panel.active{display:block}
 
     @keyframes fadeStep{
-      from{opacity:0; transform:translateY(8px)}
-      to{opacity:1; transform:translateY(0)}
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
     .category-grid{
@@ -1443,17 +1335,9 @@
       border-color:rgba(var(--accent-rgb), .24);
       background:rgba(var(--accent-rgb), .08);
       transform:translateY(-4px);
-      box-shadow:0 18px 42px rgba(var(--accent-rgb), .08);
     }
 
-    .category-card .icon{
-      margin-bottom:12px;
-    }
-
-    form{
-      display:grid;
-      gap:14px;
-    }
+    form{display:grid;gap:14px}
 
     .field-row{
       display:grid;
@@ -1461,11 +1345,9 @@
       gap:14px;
     }
 
-    .field{
-      position:relative;
-    }
+    .field{position:relative}
 
-    input,select,textarea{
+    input,textarea{
       width:100%;
       border:1px solid rgba(255,255,255,.1);
       background:rgba(255,255,255,.04);
@@ -1476,38 +1358,25 @@
       transition:var(--transition);
     }
 
-    input::placeholder,
-    textarea::placeholder{
-      color:#95a2ba;
-    }
-
-    select option{
-      background:#111;
-      color:#fff;
-    }
-
+    input::placeholder,textarea::placeholder{color:#95a2ba}
     textarea{
       min-height:160px;
       resize:vertical;
     }
 
     .field.valid input,
-    .field.valid textarea,
-    .field.valid select{
-      border-color:rgba(101,255,179,.5);
-      box-shadow:0 0 0 4px rgba(101,255,179,.08);
+    .field.valid textarea{
+      border-color:rgba(113,255,183,.5);
+      box-shadow:0 0 0 4px rgba(113,255,183,.08);
     }
 
     .field.invalid input,
-    .field.invalid textarea,
-    .field.invalid select{
-      border-color:rgba(255,108,138,.55);
-      box-shadow:0 0 0 4px rgba(255,108,138,.08), 0 0 18px rgba(255,108,138,.08);
+    .field.invalid textarea{
+      border-color:rgba(255,122,152,.55);
+      box-shadow:0 0 0 4px rgba(255,122,152,.08),0 0 18px rgba(255,122,152,.08);
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus{
+    input:focus,textarea:focus{
       border-color:rgba(var(--accent-rgb), .46);
       box-shadow:0 0 0 4px rgba(var(--accent-rgb), .08), 0 0 22px rgba(var(--accent-rgb), .08);
     }
@@ -1538,13 +1407,8 @@
       opacity:.9;
     }
 
-    .send-btn.loading .btn-text{
-      opacity:0;
-    }
-
-    .send-btn.loading .btn-loader{
-      opacity:1;
-    }
+    .send-btn.loading .btn-text{opacity:0}
+    .send-btn.loading .btn-loader{opacity:1}
 
     .btn-loader{
       position:absolute;
@@ -1581,8 +1445,8 @@
     }
 
     @keyframes statusPop{
-      0%{transform:translateY(4px); opacity:0}
-      100%{transform:translateY(0); opacity:1}
+      0%{transform:translateY(4px);opacity:0}
+      100%{transform:translateY(0);opacity:1}
     }
 
     .success-check{
@@ -1591,17 +1455,17 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:rgba(101,255,179,.12);
-      border:1px solid rgba(101,255,179,.35);
+      background:rgba(113,255,183,.12);
+      border:1px solid rgba(113,255,183,.35);
       color:var(--success);
       font-size:1.5rem;
-      box-shadow:0 0 22px rgba(101,255,179,.12);
+      box-shadow:0 0 22px rgba(113,255,183,.12);
       animation:successPulse .55s ease;
     }
 
     @keyframes successPulse{
-      0%{transform:scale(.7); opacity:0}
-      70%{transform:scale(1.08); opacity:1}
+      0%{transform:scale(.7);opacity:0}
+      70%{transform:scale(1.08);opacity:1}
       100%{transform:scale(1)}
     }
 
@@ -1619,9 +1483,7 @@
       color:var(--muted);
     }
 
-    .footer-card strong{
-      color:#fff;
-    }
+    .footer-card strong{color:#fff}
 
     .bottom-nav{
       position:fixed;
@@ -1639,8 +1501,8 @@
       flex:1;
       min-height:54px;
       border-radius:18px;
-      border:1px solid transparent;
       background:none;
+      border:1px solid transparent;
       color:#d8e0ef;
       font-weight:800;
       transition:var(--transition);
@@ -1652,14 +1514,6 @@
       border-color:rgba(var(--accent-rgb), .2);
     }
 
-    .reduced-motion *,
-    .reduced-motion *::before,
-    .reduced-motion *::after{
-      animation:none !important;
-      transition:none !important;
-      scroll-behavior:auto !important;
-    }
-
     @media (max-width:1180px){
       .hero,
       .split,
@@ -1667,30 +1521,20 @@
       .grid-4{
         grid-template-columns:1fr;
       }
-      .grid-3{
-        grid-template-columns:repeat(2,1fr);
-      }
-      .hero-stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-      .theme-showcase{
-        grid-template-columns:repeat(2,1fr);
-      }
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+      .theme-showcase{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:860px){
-      body,a,button,input,textarea,select,summary{cursor:auto}
+      body,a,button,input,textarea,select{cursor:auto}
       .cursor-dot,.cursor-ring{display:none}
-      .topbar{
-        align-items:flex-start;
-      }
+      .topbar{align-items:flex-start}
       .topbar-right{
         width:100%;
         justify-content:flex-start;
       }
-      .nav-links{
-        display:none;
-      }
+      .nav-links{display:none}
       .bottom-nav{
         display:grid;
         grid-template-columns:repeat(4,1fr);
@@ -1698,19 +1542,9 @@
       .grid-2,.grid-3,.field-row,.category-grid,.theme-showcase{
         grid-template-columns:1fr;
       }
-      .stepper{
-        grid-template-columns:1fr;
-      }
-      .hero-main,
-      .hero-side{
-        min-height:auto;
-      }
-      .view{
-        padding-bottom:120px;
-      }
-      .panel{
-        min-height:auto;
-      }
+      .stepper{grid-template-columns:1fr}
+      .hero-main,.hero-side{min-height:auto}
+      .view{padding-bottom:120px}
     }
   </style>
 </head>
@@ -1730,7 +1564,7 @@
     </div>
   </div>
 
-  <div class="preloader" id="preloader">
+  <div class="preloader hidden" id="preloader">
     <div class="preloader-box">
       <div class="logo-stage" style="width:120px;height:120px;margin-bottom:16px;">
         <div class="diamond-ring"></div>
@@ -1761,7 +1595,7 @@
           </button>
 
           <div class="topbar-right">
-            <nav class="nav-links" id="desktopNav">
+            <nav class="nav-links">
               <button type="button" class="tab-link active magnetic" data-tab-target="home">Start</button>
               <button type="button" class="tab-link magnetic" data-tab-target="philosophy">Philosophie</button>
               <button type="button" class="tab-link magnetic" data-tab-target="leitung">Leitung</button>
@@ -1781,31 +1615,31 @@
                     <span class="theme-preview">
                       <span style="background:#ffd54a"></span>
                       <span style="background:#ffb800"></span>
-                      <span style="background:#1a1a1a"></span>
+                      <span style="background:#1b1b1b"></span>
                     </span>
                   </button>
                   <button class="theme-option" type="button" data-theme="theme-blue">
                     <span>Neon Blue</span>
                     <span class="theme-preview">
-                      <span style="background:#54d3ff"></span>
-                      <span style="background:#278eff"></span>
+                      <span style="background:#58d8ff"></span>
+                      <span style="background:#2a91ff"></span>
                       <span style="background:#0d1627"></span>
                     </span>
                   </button>
                   <button class="theme-option" type="button" data-theme="theme-pink">
                     <span>Diamond Pink</span>
                     <span class="theme-preview">
-                      <span style="background:#ff71d6"></span>
-                      <span style="background:#ff45b6"></span>
-                      <span style="background:#1b0d1d"></span>
+                      <span style="background:#ff73d8"></span>
+                      <span style="background:#ff46b8"></span>
+                      <span style="background:#1a0d1b"></span>
                     </span>
                   </button>
                   <button class="theme-option" type="button" data-theme="theme-executive">
                     <span>Dark Executive</span>
                     <span class="theme-preview">
-                      <span style="background:#d5e3ff"></span>
-                      <span style="background:#93b9ff"></span>
-                      <span style="background:#11181e"></span>
+                      <span style="background:#d9e4ff"></span>
+                      <span style="background:#95b9ff"></span>
+                      <span style="background:#10161c"></span>
                     </span>
                   </button>
                 </div>
@@ -1825,12 +1659,12 @@
           <section class="panel active" data-panel="home">
             <div class="hero">
               <article class="hero-main glass tilt-card">
-                <div class="eyebrow">Diamond Class Service</div>
-                <h1 class="hero-title">
-                  <span class="grad">Premium Taxi</span><br>
+                <div class="eyebrow" id="heroEyebrow">Diamond Class Service</div>
+                <h1 class="hero-title" id="heroTitle">
+                  <span class="grad">Diamomd Taxi</span><br>
                   statt Standard-Website.
                 </h1>
-                <p class="hero-sub">
+                <p class="hero-sub" id="heroSubtitle">
                   Diamond Taxi bekommt hier kein normales Onepager-Design, sondern ein modernes Premium-Portal mit Tab-Navigation, Glow-Optik, Theme-Wechsel, interaktiven Karten und hochwertiger Präsentation für Leitung, Team, Preise und Kontakt.
                 </p>
 
@@ -1893,7 +1727,7 @@
                   <div class="headline-badge">Branding & Style</div>
                   <h2>Philosophie & Auftritt</h2>
                   <p>
-                    Dieser Bereich funktioniert wie ein eigener Tab innerhalb der Seite. Statt einfach nur runterzuscrollen, öffnet sich beim Klick auf einen Reiter ein eigenständiger Screen mit eigenem Inhalt.
+                    Jeder Reiter öffnet einen eigenen Bereich innerhalb der Website. Dadurch fühlt sich die Seite wie ein modernes Premium-Portal an.
                   </p>
                 </div>
               </div>
@@ -1904,25 +1738,22 @@
                 <article class="card glass tilt-card">
                   <div class="icon">◆</div>
                   <h3>Premium Präsenz</h3>
-                  <p>Diamond Taxi wirkt hochwertig, modern und klar organisiert – nicht wie eine einfache Fraktionsseite, sondern wie ein echtes Business-Portal.</p>
+                  <p>Diamond Taxi wirkt wie ein echtes Business-Portal statt wie eine einfache Standard-Seite.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="icon">⌁</div>
                   <h3>Interaktives Erlebnis</h3>
-                  <p>Reaktive Karten, Mouse-Light, Particles und Theme-Wechsel sorgen für ein deutlich lebendigeres Nutzergefühl.</p>
+                  <p>Reaktive Karten, Mouse-Light, Particles und modernes UI sorgen für deutlich mehr Qualität.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="icon">◌</div>
                   <h3>Tab statt Scroll</h3>
-                  <p>Jeder Reiter öffnet einen eigenen sichtbaren Bereich. Das wirkt strukturierter, exklusiver und deutlich moderner.</p>
+                  <p>Navigation fühlt sich strukturierter, exklusiver und moderner an.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="icon">✦</div>
-                  <h3>Markenidentität</h3>
-                  <p>Durch wechselbare Looks wie Gold Luxury, Neon Blue oder Dark Executive bleibt die Seite flexibel und nicht wie ein East-Taxi-Klon.</p>
+                  <h3>Eigenständiger Look</h3>
+                  <p>Mit wechselbaren Themes bleibt die Seite individuell und nicht wie eine Kopie.</p>
                 </article>
               </div>
 
@@ -1931,7 +1762,7 @@
                   <div class="headline-badge">Theme Switcher</div>
                   <h2 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;">Farben live wechseln</h2>
                   <p style="margin:0 0 18px;">
-                    Auf der Website kann der Nutzer den Stil selbst wechseln. So bleibt Diamond Taxi eigenständig und bekommt einen individuellen Premium-Look.
+                    Über den Theme-Switcher kann der Look direkt auf der Seite verändert werden.
                   </p>
 
                   <div class="theme-showcase">
@@ -1941,15 +1772,15 @@
                       <div class="theme-swatches">
                         <span style="background:#ffd54a"></span>
                         <span style="background:#ffb800"></span>
-                        <span style="background:#131313"></span>
+                        <span style="background:#1a1a1a"></span>
                       </div>
                     </div>
                     <div class="theme-card">
                       <h4>Neon Blue</h4>
                       <p>Futuristisch, clean und technisch-modern.</p>
                       <div class="theme-swatches">
-                        <span style="background:#54d3ff"></span>
-                        <span style="background:#278eff"></span>
+                        <span style="background:#58d8ff"></span>
+                        <span style="background:#2a91ff"></span>
                         <span style="background:#0d1627"></span>
                       </div>
                     </div>
@@ -1957,18 +1788,18 @@
                       <h4>Diamond Pink</h4>
                       <p>Starker Glow-Look mit Nightlife-Energie.</p>
                       <div class="theme-swatches">
-                        <span style="background:#ff71d6"></span>
-                        <span style="background:#ff45b6"></span>
-                        <span style="background:#190d1b"></span>
+                        <span style="background:#ff73d8"></span>
+                        <span style="background:#ff46b8"></span>
+                        <span style="background:#1a0d1b"></span>
                       </div>
                     </div>
                     <div class="theme-card">
                       <h4>Dark Executive</h4>
-                      <p>Seriös, kühl und besonders elegant.</p>
+                      <p>Seriös, kühl und elegant.</p>
                       <div class="theme-swatches">
-                        <span style="background:#d5e3ff"></span>
-                        <span style="background:#93b9ff"></span>
-                        <span style="background:#10161a"></span>
+                        <span style="background:#d9e4ff"></span>
+                        <span style="background:#95b9ff"></span>
+                        <span style="background:#10161c"></span>
                       </div>
                     </div>
                   </div>
@@ -1976,12 +1807,6 @@
 
                 <article class="location-photo tilt-card">
                   <img src="standort.png" alt="Standort von Diamond Taxi">
-                  <div class="location-box glass">
-                    <h3 style="margin:0 0 8px;">Starker Stadt-Auftritt</h3>
-                    <p style="margin:0;color:var(--muted);line-height:1.75;">
-                      Auch Bilder wie der Standort lassen sich wie ein eigener Premium-Block ins Portal integrieren – ohne dass alles wie ein langer Standard-Onepager wirkt.
-                    </p>
-                  </div>
                 </article>
               </div>
             </div>
@@ -1994,7 +1819,7 @@
                 <div>
                   <div class="headline-badge">Management</div>
                   <h2>Leitungs-Team</h2>
-                  <p>Die Leitung wird klar, hochwertig und präsent dargestellt. Durch 3D-Tilt und Light-Tracking wirken die Cards deutlich moderner.</p>
+                  <p>Die Leitung wird hochwertig, direkt und modern dargestellt.</p>
                 </div>
               </div>
 
@@ -2007,21 +1832,18 @@
                   <h3>Tommy Elechandro</h3>
                   <p>Verantwortet Vision, Außenwirkung und die strategische Entwicklung von Diamond Taxi.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="avatar">CS</div>
                   <span class="badge">Geschäftsleitung</span>
                   <h3>Christian Steiner</h3>
                   <p>Verantwortlich für operative Prozesse, Organisation und die tägliche Struktur des Unternehmens.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="avatar">WM</div>
                   <span class="badge">Personalleitung</span>
                   <h3>Wladimir Makarof</h3>
                   <p>Betreut Recruiting, interne Entwicklung, Bewerbungen und personelle Abläufe.</p>
                 </article>
-
                 <article class="card glass tilt-card">
                   <div class="avatar">VK</div>
                   <span class="badge">Personalleitung</span>
@@ -2039,7 +1861,7 @@
                 <div>
                   <div class="headline-badge">Employee Highlights</div>
                   <h2>Mitarbeiter des Monats</h2>
-                  <p>Drei hervorgehobene Mitarbeitende werden als Premium-Karten mit Bild, Hover-Effekt und Glow dargestellt.</p>
+                  <p>Drei hervorgehobene Mitarbeitende werden modern und hochwertig präsentiert.</p>
                 </div>
               </div>
 
@@ -2053,9 +1875,8 @@
                   </div>
                   <span class="badge">Mitarbeiter des Monats</span>
                   <h3>Jeff Adil Cüneyt Rince</h3>
-                  <p>Steht aktuell für besonders starke Leistung, Präsenz und professionelles Auftreten.</p>
+                  <p>Steht aktuell für starke Leistung, Präsenz und professionelles Auftreten.</p>
                 </article>
-
                 <article class="card glass employee-card tilt-card">
                   <div class="employee-frame">
                     <img class="employee-photo" src="joe.png" alt="Joe Barbaro">
@@ -2063,9 +1884,8 @@
                   </div>
                   <span class="badge">Mitarbeiter des Monats</span>
                   <h3>Joe Barbaro</h3>
-                  <p>Überzeugt mit Zuverlässigkeit, Wirkung nach außen und starker Performance im Unternehmen.</p>
+                  <p>Überzeugt mit Zuverlässigkeit, Wirkung nach außen und starker Performance.</p>
                 </article>
-
                 <article class="card glass employee-card tilt-card">
                   <div class="employee-frame">
                     <img class="employee-photo" src="rafa.png" alt="Rafa Quintero">
@@ -2073,20 +1893,20 @@
                   </div>
                   <span class="badge">Mitarbeiter des Monats</span>
                   <h3>Rafa Quintero</h3>
-                  <p>Wird aufgrund seines Engagements und seiner aktuellen Leistung besonders hervorgehoben.</p>
+                  <p>Wird aufgrund seines Engagements und seiner aktuellen Leistung hervorgehoben.</p>
                 </article>
               </div>
             </div>
           </section>
 
-          <!-- PRICES -->
+          <!-- PREISE -->
           <section class="panel" data-panel="preise">
             <div class="section-shell">
               <div class="section-head">
                 <div>
                   <div class="headline-badge">Pricing & Services</div>
                   <h2>Leistungen & Preise</h2>
-                  <p>Alle Preisbereiche sind modern aufgebaut, zählen dynamisch ein und reagieren auf Mausbewegungen.</p>
+                  <p>Alle Preisbereiche reagieren dynamisch und modern.</p>
                 </div>
               </div>
 
@@ -2104,7 +1924,6 @@
                     <div>Zusätzlich 4 $ pro Meter</div>
                   </div>
                 </article>
-
                 <article class="card glass tilt-card">
                   <span class="price-tag">Fahrpreis</span>
                   <h3>Meterpreis</h3>
@@ -2116,7 +1935,6 @@
                     <div>Einfach nachvollziehbar</div>
                   </div>
                 </article>
-
                 <article class="card glass tilt-card">
                   <span class="price-tag">Sonderfahrt</span>
                   <h3>Grenzübergänge</h3>
@@ -2128,7 +1946,6 @@
                     <div>Saubere Sonderregelung</div>
                   </div>
                 </article>
-
                 <article class="card glass tilt-card">
                   <span class="price-tag">Premium</span>
                   <h3>VIP Shuttle</h3>
@@ -2140,7 +1957,6 @@
                     <div>Für VIPs und Events</div>
                   </div>
                 </article>
-
                 <article class="card glass tilt-card">
                   <span class="price-tag">Security</span>
                   <h3>Personenschutz</h3>
@@ -2152,12 +1968,11 @@
                     <div>Exklusiver Security-Service</div>
                   </div>
                 </article>
-
                 <article class="card glass tilt-card">
                   <span class="price-tag">Erweitert</span>
                   <h3>Security Plus</h3>
                   <div class="price"><strong class="counter" data-target="30000">0</strong><span>$ pro 30 Minuten</span></div>
-                  <p>Erweiterte Security-Stufe für besonders sensible Lagen und hochklassige Einsätze.</p>
+                  <p>Erweiterte Security-Stufe für besonders sensible Lagen.</p>
                   <div class="list">
                     <div>Mehr Schutzpräsenz</div>
                     <div>Maximale Außenwirkung</div>
@@ -2168,14 +1983,14 @@
             </div>
           </section>
 
-          <!-- CONTACT -->
+          <!-- KONTAKT -->
           <section class="panel" data-panel="kontakt">
             <div class="section-shell">
               <div class="section-head">
                 <div>
                   <div class="headline-badge">Contact & Recruiting</div>
                   <h2>Kontakt & Bewerbung</h2>
-                  <p>Statt eines simplen Formulars gibt es hier einen dreistufigen Funnel mit Auswahl, Eingabe und Versand.</p>
+                  <p>Moderner Funnel statt Standardformular.</p>
                 </div>
               </div>
 
@@ -2185,7 +2000,7 @@
                 <article class="card glass tilt-card">
                   <h3>Was hier möglich ist</h3>
                   <p>
-                    Über dieses Portal können allgemeine Fragen, Bewerbungen und Beschwerden übermittelt werden. Zusätzlich gibt es einen direkten Discord-Button für deine Community.
+                    Über dieses Portal können allgemeine Fragen, Bewerbungen und Beschwerden übermittelt werden. Zusätzlich gibt es einen direkten Discord-Button.
                   </p>
 
                   <div class="mini-grid">
@@ -2199,16 +2014,6 @@
                   <a class="discord-btn magnetic" href="https://discord.gg/sNvj8eBeVj" target="_blank" rel="noopener noreferrer">
                     Discord beitreten
                   </a>
-
-                  <p class="note" style="margin-top:18px;">
-                    Benötigte Dateien im gleichen Ordner:
-                    <strong>index.html</strong>,
-                    <strong>logo.png</strong>,
-                    <strong>standort.png</strong>,
-                    <strong>jeff.png</strong>,
-                    <strong>joe.png</strong>,
-                    <strong>rafa.png</strong>.
-                  </p>
                 </article>
 
                 <article class="card glass tilt-card">
@@ -2283,9 +2088,6 @@
 
                     <div class="step-panel" data-step-panel="3">
                       <h3 style="margin:0 0 10px;">Absenden</h3>
-                      <p class="note" style="margin-top:0;">
-                        Prüfe deine Angaben und sende danach die Anfrage ab. Bei Bewerbungen und Beschwerden kann automatisch eine Leitungsrolle gepingt werden.
-                      </p>
 
                       <div class="mini-grid" style="margin-top:14px;">
                         <div class="mini-item"><strong>Kategorie:</strong> <span id="reviewCategory">–</span></div>
@@ -2318,7 +2120,6 @@
                 <div>
                   <div class="headline-badge">Questions</div>
                   <h2>FAQ</h2>
-                  <p>Die FAQ ist animiert aufgebaut – mit smooth Expand, Glow und rotierendem Plus-Icon.</p>
                 </div>
               </div>
 
@@ -2339,12 +2140,12 @@
 
                 <div class="faq-item">
                   <button class="faq-trigger magnetic" type="button">
-                    <span>Warum öffnet sich beim Klicken auf einen Reiter jetzt ein eigener Bereich?</span>
+                    <span>Warum öffnet sich beim Klicken auf einen Reiter ein eigener Bereich?</span>
                     <span class="faq-icon">+</span>
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Weil die Website nun wie ein internes Tab-System funktioniert. Dadurch fühlt sie sich moderner und hochwertiger an als ein normaler Scroll-Onepager.</p>
+                      <p>Weil die Website nun wie ein internes Tab-System funktioniert. Dadurch fühlt sie sich moderner und hochwertiger an.</p>
                     </div>
                   </div>
                 </div>
@@ -2356,7 +2157,7 @@
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Ja. Über den Theme-Switcher lassen sich verschiedene Farbwelten wie Gold Luxury, Neon Blue, Diamond Pink und Dark Executive live wechseln.</p>
+                      <p>Ja. Über den Theme-Switcher lassen sich verschiedene Farbwelten live wechseln.</p>
                     </div>
                   </div>
                 </div>
@@ -2368,7 +2169,7 @@
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Oft nicht zuverlässig, weil direkte Requests an Discord auf statischen Seiten durch CORS blockiert werden können. Dafür ist meist ein kleiner Proxy oder Worker notwendig.</p>
+                      <p>Oft nicht zuverlässig, weil direkte Requests an Discord auf statischen Seiten durch CORS blockiert werden können. Dafür ist meist ein kleiner Proxy oder Worker nötig.</p>
                     </div>
                   </div>
                 </div>
@@ -2380,7 +2181,7 @@
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Ja. Es gibt touch-freundliche Cards, eine mobile Bottom Navigation und zusätzlich einen Motion-Toggle für reduzierte Animationen.</p>
+                      <p>Ja. Es gibt touch-freundliche Cards, eine mobile Bottom Navigation und einen Motion-Toggle für reduzierte Animationen.</p>
                     </div>
                   </div>
                 </div>
@@ -2406,7 +2207,7 @@
     </footer>
   </div>
 
-  <div class="bottom-nav glass" id="bottomNav">
+  <div class="bottom-nav glass">
     <button type="button" class="tab-link active" data-tab-target="home">Start</button>
     <button type="button" class="tab-link" data-tab-target="philosophy">Style</button>
     <button type="button" class="tab-link" data-tab-target="preise">Preise</button>
@@ -2417,16 +2218,29 @@
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1485367512303665364/_xK8KZC8CmbS4baBeHczQonkyXAcX3uTfukaNSVbKS5_iQakDjlgXkEXDHQH2iovhLIS";
     const ROLE_ID = "1482761218832863352";
 
+    // HERO TEXT EINFACH ÄNDERBAR
+    const HERO_CONTENT = {
+      eyebrow: "Diamond Class Service",
+      titleHtml: '<span class="grad">Diamond Taxi</span><br>statt Standard-Website.',
+      subtitle: "Diamond Taxi bekommt hier kein normales Onepager-Design, sondern ein modernes Premium-Portal mit Tab-Navigation, Glow-Optik, Theme-Wechsel, interaktiven Karten und hochwertiger Präsentation für Leitung, Team, Preise und Kontakt."
+    };
+
+    document.getElementById("heroEyebrow").textContent = HERO_CONTENT.eyebrow;
+    document.getElementById("heroTitle").innerHTML = HERO_CONTENT.titleHtml;
+    document.getElementById("heroSubtitle").textContent = HERO_CONTENT.subtitle;
+
+    // SPLASH / PRELOADER
     const splash = document.getElementById("splash");
     const preloader = document.getElementById("preloader");
 
     window.addEventListener("load", () => {
-      setTimeout(() => splash.classList.add("hidden"), 1600);
-      setTimeout(() => preloader.classList.remove("hidden"), 1500);
-      setTimeout(() => preloader.classList.add("hidden"), 3400);
+      setTimeout(() => splash.classList.add("hidden"), 1500);
+      setTimeout(() => preloader.classList.remove("hidden"), 1350);
+      setTimeout(() => preloader.classList.add("hidden"), 3200);
+      setTimeout(runCountersForActivePanel, 3200);
     });
 
-    // Custom Cursor
+    // CURSOR
     const cursorDot = document.getElementById("cursorDot");
     const cursorRing = document.getElementById("cursorRing");
     let mouseX = window.innerWidth / 2;
@@ -2453,14 +2267,14 @@
     animateCursor();
 
     function bindHoverCursor() {
-      document.querySelectorAll("a, button, input, textarea, select, .magnetic").forEach((el) => {
+      document.querySelectorAll("a, button, input, textarea, .magnetic").forEach((el) => {
         el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
         el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
       });
     }
     bindHoverCursor();
 
-    // Magnetic
+    // MAGNETIC
     document.querySelectorAll(".magnetic").forEach((el) => {
       el.addEventListener("mousemove", (e) => {
         if (document.body.classList.contains("reduced-motion")) return;
@@ -2474,44 +2288,9 @@
       });
     });
 
-    // Theme Switcher
-    const themeSwitcher = document.getElementById("themeSwitcher");
-    const themeToggle = document.getElementById("themeToggle");
-    const themeOptions = document.querySelectorAll(".theme-option");
-
-    themeToggle.addEventListener("click", () => {
-      themeSwitcher.classList.toggle("open");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!themeSwitcher.contains(e.target)) {
-        themeSwitcher.classList.remove("open");
-      }
-    });
-
-    themeOptions.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const theme = btn.dataset.theme;
-        document.body.classList.remove("theme-gold", "theme-blue", "theme-pink", "theme-executive");
-        document.body.classList.add(theme);
-        themeOptions.forEach(x => x.classList.remove("active"));
-        btn.classList.add("active");
-        themeSwitcher.classList.remove("open");
-      });
-    });
-
-    // Motion Toggle
-    const motionToggle = document.getElementById("motionToggle");
-    motionToggle.addEventListener("click", () => {
-      document.body.classList.toggle("reduced-motion");
-      motionToggle.textContent = document.body.classList.contains("reduced-motion") ? "Motion Off" : "Motion";
-    });
-
-    // Particle Background
+    // PARTICLES
     const particlesWrap = document.getElementById("particles");
-    const particleCount = 28;
-
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < 28; i++) {
       const p = document.createElement("span");
       p.className = "particle";
       p.style.left = Math.random() * 100 + "%";
@@ -2522,10 +2301,55 @@
       particlesWrap.appendChild(p);
     }
 
-    // Tab System
-    const allTabButtons = document.querySelectorAll("[data-tab-target]");
+    // THEME SWITCHER FIXED
+    const themeSwitcher = document.getElementById("themeSwitcher");
+    const themeToggle = document.getElementById("themeToggle");
+    const themeOptions = document.querySelectorAll(".theme-option");
+
+    themeToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      themeSwitcher.classList.toggle("open");
+    });
+
+    function setTheme(themeName) {
+      document.body.classList.remove("theme-gold", "theme-blue", "theme-pink", "theme-executive");
+      document.body.classList.add(themeName);
+      themeOptions.forEach(opt => {
+        opt.classList.toggle("active", opt.dataset.theme === themeName);
+      });
+      localStorage.setItem("diamond_theme", themeName);
+    }
+
+    themeOptions.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setTheme(btn.dataset.theme);
+        themeSwitcher.classList.remove("open");
+      });
+    });
+
+    const savedTheme = localStorage.getItem("diamond_theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme("theme-gold");
+    }
+
+    document.addEventListener("click", (e) => {
+      if (!themeSwitcher.contains(e.target)) {
+        themeSwitcher.classList.remove("open");
+      }
+    });
+
+    // MOTION TOGGLE
+    const motionToggle = document.getElementById("motionToggle");
+    motionToggle.addEventListener("click", () => {
+      document.body.classList.toggle("reduced-motion");
+      motionToggle.textContent = document.body.classList.contains("reduced-motion") ? "Motion Off" : "Motion";
+    });
+
+    // TAB SYSTEM
     const panels = document.querySelectorAll(".panel");
-    const bottomNav = document.getElementById("bottomNav");
+    const tabButtons = document.querySelectorAll("[data-tab-target]");
 
     function activateTab(name) {
       panels.forEach((panel) => {
@@ -2536,17 +2360,19 @@
         btn.classList.toggle("active", btn.dataset.tabTarget === name);
       });
 
-      window.scrollTo({ top: 0, behavior: document.body.classList.contains("reduced-motion") ? "auto" : "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: document.body.classList.contains("reduced-motion") ? "auto" : "smooth"
+      });
 
-      // restart counters only in visible panel
       runCountersForActivePanel();
     }
 
-    allTabButtons.forEach((btn) => {
+    tabButtons.forEach((btn) => {
       btn.addEventListener("click", () => activateTab(btn.dataset.tabTarget));
     });
 
-    // Reactive Logo
+    // REACTIVE LOGO
     const logoWrap = document.getElementById("logoWrap");
     const reactiveLogo = document.getElementById("reactiveLogo");
 
@@ -2560,19 +2386,17 @@
         const rotateX = -((y / rect.height) - 0.5) * 24;
         reactiveLogo.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.045)`;
       });
-
       logoWrap.addEventListener("mouseleave", () => {
         reactiveLogo.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
       });
     }
 
-    // 3D Tilt Cards + Mouse Light
+    // TILT + MOUSE LIGHT
     document.querySelectorAll(".tilt-card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
         card.style.setProperty("--mx", `${x}px`);
         card.style.setProperty("--my", `${y}px`);
 
@@ -2588,7 +2412,7 @@
       });
     });
 
-    // Counters
+    // COUNTERS
     const animatedCounters = new WeakSet();
 
     function animateCounter(el) {
@@ -2606,7 +2430,6 @@
         el.textContent = value.toLocaleString("de-DE");
         if (progress < 1) requestAnimationFrame(frame);
       }
-
       requestAnimationFrame(frame);
     }
 
@@ -2624,22 +2447,19 @@
       });
     });
 
-    // Funnel logic
-    let currentStep = 1;
+    // FUNNEL
     let chosenCategory = "";
-
     const stepIndicators = document.querySelectorAll("[data-step-indicator]");
     const stepPanels = document.querySelectorAll("[data-step-panel]");
     const categoryCards = document.querySelectorAll(".category-card");
-
     const selectedCategoryInput = document.getElementById("selectedCategory");
+
     const reviewCategory = document.getElementById("reviewCategory");
     const reviewName = document.getElementById("reviewName");
     const reviewContact = document.getElementById("reviewContact");
     const reviewMessage = document.getElementById("reviewMessage");
 
     function setStep(step) {
-      currentStep = step;
       stepIndicators.forEach((el) => {
         el.classList.toggle("active", Number(el.dataset.stepIndicator) === step);
       });
@@ -2664,21 +2484,7 @@
 
     document.getElementById("backToStep1").addEventListener("click", () => setStep(1));
 
-    document.getElementById("toStep3").addEventListener("click", () => {
-      const formValid = validateAllFields();
-      if (!chosenCategory) return;
-      if (!formValid) return;
-
-      reviewCategory.textContent = chosenCategory || "–";
-      reviewName.textContent = document.getElementById("name").value.trim() || "–";
-      reviewContact.textContent = document.getElementById("contact").value.trim() || "–";
-      reviewMessage.textContent = document.getElementById("message").value.trim() || "–";
-      setStep(3);
-    });
-
-    document.getElementById("backToStep2").addEventListener("click", () => setStep(2));
-
-    // Live Validation
+    // VALIDATION
     const validators = {
       name: (value) => value.trim().length >= 2,
       contact: (value) => value.trim().length >= 3,
@@ -2687,30 +2493,33 @@
 
     function setFieldState(field, isValid, text) {
       field.classList.remove("valid", "invalid");
-      if (field.querySelector("input, textarea, select")?.value.trim() === "") {
-        field.querySelector(".field-hint").textContent = "";
+      const input = field.querySelector("input, textarea");
+      const hint = field.querySelector(".field-hint");
+
+      if (!input.value.trim()) {
+        hint.textContent = "";
         return;
       }
 
       field.classList.add(isValid ? "valid" : "invalid");
-      field.querySelector(".field-hint").textContent = text;
-      field.querySelector(".field-hint").style.color = isValid ? "var(--success)" : "var(--danger)";
+      hint.textContent = text;
+      hint.style.color = isValid ? "var(--success)" : "var(--danger)";
     }
 
     function validateField(field) {
       const type = field.dataset.validate;
-      const input = field.querySelector("input, textarea, select");
+      const input = field.querySelector("input, textarea");
       if (!input || !validators[type]) return true;
 
       const value = input.value || "";
       const ok = validators[type](value);
 
-      let message = "";
-      if (type === "name") message = ok ? "Name sieht gut aus." : "Bitte mindestens 2 Zeichen eingeben.";
-      if (type === "contact") message = ok ? "Kontaktweg ist gültig." : "Bitte einen Kontaktweg angeben.";
-      if (type === "message") message = ok ? "Nachricht ist lang genug." : "Bitte mindestens 10 Zeichen schreiben.";
+      let msg = "";
+      if (type === "name") msg = ok ? "Name sieht gut aus." : "Bitte mindestens 2 Zeichen eingeben.";
+      if (type === "contact") msg = ok ? "Kontaktweg ist gültig." : "Bitte einen Kontaktweg angeben.";
+      if (type === "message") msg = ok ? "Nachricht ist lang genug." : "Bitte mindestens 10 Zeichen schreiben.";
 
-      setFieldState(field, ok, message);
+      setFieldState(field, ok, msg);
       return ok;
     }
 
@@ -2722,13 +2531,26 @@
       return ok;
     }
 
-    document.querySelectorAll(".field[data-validate] input, .field[data-validate] textarea, .field[data-validate] select")
-      .forEach((input) => {
-        input.addEventListener("input", () => validateField(input.closest(".field")));
-        input.addEventListener("blur", () => validateField(input.closest(".field")));
-      });
+    document.querySelectorAll(".field[data-validate] input, .field[data-validate] textarea").forEach((input) => {
+      input.addEventListener("input", () => validateField(input.closest(".field")));
+      input.addEventListener("blur", () => validateField(input.closest(".field")));
+    });
 
-    // Send Form
+    document.getElementById("toStep3").addEventListener("click", () => {
+      if (!chosenCategory) return;
+      const valid = validateAllFields();
+      if (!valid) return;
+
+      reviewCategory.textContent = chosenCategory || "–";
+      reviewName.textContent = document.getElementById("name").value.trim() || "–";
+      reviewContact.textContent = document.getElementById("contact").value.trim() || "–";
+      reviewMessage.textContent = document.getElementById("message").value.trim() || "–";
+      setStep(3);
+    });
+
+    document.getElementById("backToStep2").addEventListener("click", () => setStep(2));
+
+    // SEND
     const sendBtn = document.getElementById("sendBtn");
     const formStatus = document.getElementById("formStatus");
     const successBadgeWrap = document.getElementById("successBadgeWrap");
@@ -2804,7 +2626,7 @@
         sendBtn.classList.remove("loading");
         formStatus.textContent = "Deine Nachricht wurde erfolgreich übermittelt.";
         formStatus.className = "form-status success";
-        successBadgeWrap.innerHTML = `<div class="success-check">✓</div>`;
+        successBadgeWrap.innerHTML = '<div class="success-check">✓</div>';
 
         document.getElementById("funnelForm").reset();
         selectedCategoryInput.value = "";
@@ -2822,14 +2644,11 @@
         setStep(1);
       } catch (error) {
         sendBtn.classList.remove("loading");
-        formStatus.textContent = "Direkte Discord-Webhooks werden auf GitHub Pages oft per CORS blockiert. Nutze dafür am besten einen kleinen Proxy oder Worker.";
+        formStatus.textContent = "Direkte Discord-Webhooks werden auf GitHub Pages oft per CORS blockiert. Nutze dafür am besten einen Proxy oder Worker.";
         formStatus.className = "form-status error";
         console.error(error);
       }
     });
-
-    // Start counters on first visible panel
-    setTimeout(runCountersForActivePanel, 3600);
   </script>
 </body>
 </html>
