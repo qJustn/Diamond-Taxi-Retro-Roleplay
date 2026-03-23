@@ -1726,7 +1726,7 @@
                 <div>
                   <div class="headline-badge">Branding & Style</div>
                   <h2>Philosophie & Auftritt</h2>
-                  <p>Jeder Reiter öffnet einen eigenen Bereich innerhalb der Website. Dadurch wirkt Diamond Taxi wie ein echtes Premium-Portal statt wie ein normaler Scroll-Onepager.</p>
+                  
                 </div>
               </div>
 
@@ -1814,7 +1814,7 @@
                 <div>
                   <div class="headline-badge">Management</div>
                   <h2>Leitungs-Team</h2>
-                  <p>Die Leitung wird hochwertig, direkt und modern dargestellt.</p>
+                  
                 </div>
               </div>
 
@@ -1855,7 +1855,7 @@
                 <div>
                   <div class="headline-badge">Employee Highlights</div>
                   <h2>Mitarbeiter des Monats</h2>
-                  <p>Drei hervorgehobene Mitarbeitende werden modern und hochwertig präsentiert.</p>
+                  
                 </div>
               </div>
 
@@ -1899,7 +1899,7 @@
                 <div>
                   <div class="headline-badge">Pricing & Services</div>
                   <h2>Leistungen & Preise</h2>
-                  <p>Alle Preisbereiche reagieren dynamisch und modern.</p>
+                  
                 </div>
               </div>
 
@@ -1982,7 +1982,7 @@
                 <div>
                   <div class="headline-badge">Contact & Recruiting</div>
                   <h2>Kontakt & Bewerbung</h2>
-                  <p>Moderner Funnel statt Standardformular.</p>
+                  
                 </div>
               </div>
 
@@ -1995,10 +1995,9 @@
 
                   <div class="mini-grid">
                     <div class="mini-item">Allgemeine Fragen an Diamond Taxi</div>
-                    <div class="mini-item">Bewerbungen an die Personalleitung</div>
-                    <div class="mini-item">Beschwerden mit Rollen-Ping</div>
-                    <div class="mini-item">Premium Funnel statt Standardformular</div>
-                    <div class="mini-item">Live Validierung und modernes Feedback</div>
+                    <div class="mini-item">Bewerbungen als Mitarbeiter einreichen</div>
+                    <div class="mini-item">Beschwerde einreichen</div>
+                    
                   </div>
 
                   <a class="discord-btn magnetic" href="https://discord.gg/sNvj8eBeVj" target="_blank" rel="noopener noreferrer">
@@ -2059,7 +2058,7 @@
                             <span class="field-hint"></span>
                           </div>
                           <div class="field" data-validate="contact">
-                            <input type="text" id="contact" placeholder="Dein Kontaktweg" required>
+                            <input type="text" id="contact" placeholder="Deine Handynummer" required>
                             <span class="field-hint"></span>
                           </div>
                         </div>
@@ -2082,7 +2081,7 @@
                       <div class="mini-grid" style="margin-top:14px;">
                         <div class="mini-item"><strong>Kategorie:</strong> <span id="reviewCategory">–</span></div>
                         <div class="mini-item"><strong>Name:</strong> <span id="reviewName">–</span></div>
-                        <div class="mini-item"><strong>Kontaktweg:</strong> <span id="reviewContact">–</span></div>
+                        <div class="mini-item"><strong>Handynummer:</strong> <span id="reviewContact">–</span></div>
                         <div class="mini-item"><strong>Nachricht:</strong> <span id="reviewMessage">–</span></div>
                       </div>
 
@@ -2186,10 +2185,10 @@
         <div class="footer-card glass">
           <div>
             <strong>Diamond Taxi</strong> • Retro City<br>
-            Premium Portal mit Tabs, Themes, Glow, Funnel und Executive UI.
+           
           </div>
           <div>
-            Bereit für GitHub Pages als <strong>index.html</strong>
+           
           </div>
         </div>
       </div>
@@ -2491,7 +2490,7 @@
 
       let msg = "";
       if (type === "name") msg = ok ? "Name sieht gut aus." : "Bitte mindestens 2 Zeichen eingeben.";
-      if (type === "contact") msg = ok ? "Kontaktweg ist gültig." : "Bitte einen Kontaktweg angeben.";
+      if (type === "contact") msg = ok ? "Handynummer ist gültig." : "Bitte eine Handynummer angeben.";
       if (type === "message") msg = ok ? "Nachricht ist lang genug." : "Bitte mindestens 10 Zeichen schreiben.";
 
       setFieldState(field, ok, msg);
@@ -2574,7 +2573,7 @@
             color: 16766720,
             fields: [
               { name: "Name", value: name },
-              { name: "Kontaktweg", value: contact },
+              { name: "Handynummer", value: contact },
               { name: "Kategorie", value: subject },
               { name: "Nachricht", value: message.length > 1024 ? message.slice(0, 1021) + "..." : message }
             ],
