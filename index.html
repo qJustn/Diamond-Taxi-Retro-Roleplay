@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diamond Taxi | Premium Portal</title>
-  <meta name="description" content="Diamond Taxi Premium Portal für Retro City." />
+  <title>Diamond Taxi | Executive Portal</title>
+  <meta name="description" content="Diamond Taxi – Premium Taxi- und Sicherheitsportal für Retro City." />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,24 +13,70 @@
     :root{
       --bg:#090806;
       --bg-2:#14110b;
-      --panel:rgba(20,17,10,.72);
-      --panel-2:rgba(14,11,7,.93);
-      --text:#f7f7fb;
-      --muted:#aab0bc;
-      --line:rgba(255,255,255,.08);
+      --bg-3:#1a140a;
+      --panel:rgba(19,16,10,.72);
+      --panel-2:rgba(13,10,7,.93);
+      --text:#f8f8fc;
+      --muted:#abb0ba;
+      --soft:#d8dde7;
       --accent:#ffd54a;
       --accent-2:#ffb800;
       --accent-rgb:255,213,74;
-      --success:#71ffb7;
-      --danger:#ff7a98;
+      --danger:#ff7898;
+      --success:#70ffb6;
       --shadow:0 30px 80px rgba(0,0,0,.42);
-      --radius-xl:32px;
-      --radius-lg:24px;
-      --radius-md:18px;
-      --max:1380px;
+      --radius-xl:30px;
+      --max:1440px;
       --cursor-x:50vw;
       --cursor-y:50vh;
+      --nav-h:88px;
+      --progress:0%;
       --transition:260ms cubic-bezier(.2,.8,.2,1);
+      --hero-title-size:clamp(2.9rem, 6vw, 6.2rem);
+    }
+
+    body.theme-gold{
+      --bg:#090806;
+      --bg-2:#14110b;
+      --bg-3:#1a140a;
+      --panel:rgba(19,16,10,.72);
+      --panel-2:rgba(13,10,7,.93);
+      --accent:#ffd54a;
+      --accent-2:#ffb800;
+      --accent-rgb:255,213,74;
+    }
+
+    body.theme-blue{
+      --bg:#06101a;
+      --bg-2:#0c1728;
+      --bg-3:#102032;
+      --panel:rgba(11,21,36,.74);
+      --panel-2:rgba(8,15,26,.94);
+      --accent:#5ad7ff;
+      --accent-2:#2d92ff;
+      --accent-rgb:90,215,255;
+    }
+
+    body.theme-pink{
+      --bg:#0f0710;
+      --bg-2:#180b1b;
+      --bg-3:#220e25;
+      --panel:rgba(27,13,29,.74);
+      --panel-2:rgba(18,10,20,.94);
+      --accent:#ff74d8;
+      --accent-2:#ff47b9;
+      --accent-rgb:255,116,216;
+    }
+
+    body.theme-executive{
+      --bg:#07090c;
+      --bg-2:#10161c;
+      --bg-3:#151d24;
+      --panel:rgba(14,18,23,.74);
+      --panel-2:rgba(10,13,17,.94);
+      --accent:#d9e4ff;
+      --accent-2:#95b9ff;
+      --accent-rgb:149,185,255;
     }
 
     *{box-sizing:border-box}
@@ -41,9 +87,9 @@
       font-family:'Outfit',system-ui,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(800px 500px at 10% 0%, rgba(var(--accent-rgb), .10), transparent 60%),
-        radial-gradient(700px 420px at 100% 10%, rgba(var(--accent-rgb), .06), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        radial-gradient(900px 540px at 8% 0%, rgba(var(--accent-rgb), .10), transparent 60%),
+        radial-gradient(800px 500px at 100% 10%, rgba(var(--accent-rgb), .06), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
       overflow-x:hidden;
       cursor:none;
     }
@@ -64,50 +110,10 @@
       pointer-events:none;
       z-index:0;
       background-image:
-        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
       background-size:72px 72px;
-      mask-image:linear-gradient(180deg, rgba(255,255,255,.22), transparent 88%);
-    }
-
-    body.theme-gold{
-      --bg:#090806;
-      --bg-2:#14110b;
-      --panel:rgba(20,17,10,.72);
-      --panel-2:rgba(14,11,7,.93);
-      --accent:#ffd54a;
-      --accent-2:#ffb800;
-      --accent-rgb:255,213,74;
-    }
-
-    body.theme-blue{
-      --bg:#06101a;
-      --bg-2:#0c1828;
-      --panel:rgba(13,22,38,.72);
-      --panel-2:rgba(8,15,26,.93);
-      --accent:#57d8ff;
-      --accent-2:#2b91ff;
-      --accent-rgb:87,216,255;
-    }
-
-    body.theme-pink{
-      --bg:#0f0710;
-      --bg-2:#180b1b;
-      --panel:rgba(27,14,29,.72);
-      --panel-2:rgba(18,10,20,.93);
-      --accent:#ff73d8;
-      --accent-2:#ff46b8;
-      --accent-rgb:255,115,216;
-    }
-
-    body.theme-executive{
-      --bg:#07090c;
-      --bg-2:#12171d;
-      --panel:rgba(15,19,24,.72);
-      --panel-2:rgba(10,13,17,.93);
-      --accent:#d9e4ff;
-      --accent-2:#95b9ff;
-      --accent-rgb:149,185,255;
+      mask-image:linear-gradient(180deg, rgba(255,255,255,.26), transparent 88%);
     }
 
     body.reduced-motion *,
@@ -120,8 +126,9 @@
 
     a,button,input,textarea,select{cursor:none}
     a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
     button,input,textarea,select{font:inherit}
+    img{display:block;max-width:100%}
+    .hidden{display:none!important}
 
     .cursor-dot,.cursor-ring{
       position:fixed;
@@ -143,7 +150,7 @@
     .cursor-ring{
       width:34px;
       height:34px;
-      border:1px solid rgba(255,255,255,.25);
+      border:1px solid rgba(255,255,255,.24);
       background:rgba(255,255,255,.03);
       backdrop-filter:blur(8px);
       transition:width .18s ease,height .18s ease,border-color .18s ease,background .18s ease;
@@ -181,6 +188,17 @@
       100%{transform:translate3d(40px,-120px,0) scale(1.35);opacity:0}
     }
 
+    .top-progress{
+      position:fixed;
+      top:0;
+      left:0;
+      width:var(--progress);
+      height:3px;
+      z-index:2500;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent),#fff);
+      box-shadow:0 0 18px rgba(var(--accent-rgb), .4);
+    }
+
     .splash,.preloader{
       position:fixed;
       inset:0;
@@ -199,7 +217,7 @@
     }
 
     .splash-box,.preloader-box{
-      width:min(92vw, 560px);
+      width:min(92vw, 600px);
       text-align:center;
       position:relative;
     }
@@ -358,7 +376,7 @@
     }
 
     .topbar{
-      min-height:86px;
+      min-height:var(--nav-h);
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -423,7 +441,8 @@
 
     .nav-links button,
     .mini-btn,
-    .theme-option{
+    .theme-option,
+    .cmd-item{
       background:none;
       border:0;
       color:inherit;
@@ -536,7 +555,7 @@
     .tab-panels{
       width:100%;
       position:relative;
-      min-height:720px;
+      min-height:760px;
     }
 
     .panel{
@@ -559,28 +578,28 @@
 
     .hero{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.1fr .9fr;
       gap:18px;
     }
 
     .hero-main,
     .hero-side{
-      border-radius:34px;
+      border-radius:36px;
       overflow:hidden;
       position:relative;
     }
 
     .hero-main{
-      padding:34px;
-      min-height:620px;
+      padding:36px;
+      min-height:690px;
     }
 
     .hero-main::before{
       content:"";
       position:absolute;
       inset:auto -16% -24% auto;
-      width:360px;
-      height:360px;
+      width:380px;
+      height:380px;
       border-radius:50%;
       background:radial-gradient(circle, rgba(var(--accent-rgb), .14), transparent 62%);
       filter:blur(14px);
@@ -612,16 +631,16 @@
     }
 
     .hero-title{
-      margin:0 0 14px;
-      font-size:clamp(2.8rem, 6vw, 5.3rem);
-      line-height:.96;
+      margin:0 0 16px;
+      font-size:var(--hero-title-size);
+      line-height:.94;
       letter-spacing:-.06em;
       text-wrap:balance;
-      max-width:900px;
+      max-width:920px;
     }
 
     .hero-sub{
-      max-width:820px;
+      max-width:860px;
       margin:0 0 26px;
       color:var(--muted);
       line-height:1.9;
@@ -703,9 +722,9 @@
 
     .hero-side{
       padding:20px;
-      min-height:620px;
+      min-height:690px;
       display:grid;
-      grid-template-rows:auto 1fr auto;
+      grid-template-rows:auto 1fr auto auto;
       gap:18px;
     }
 
@@ -778,14 +797,18 @@
       transition:transform .18s ease, filter .18s ease;
     }
 
-    .scanner-card{
+    .scanner-card,
+    .status-card,
+    .quick-card{
       padding:18px;
       border-radius:24px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.03);
     }
 
-    .scanner-card h3{
+    .scanner-card h3,
+    .status-card h3,
+    .quick-card h3{
       margin:0 0 10px;
       font-size:1rem;
     }
@@ -831,6 +854,51 @@
       font-weight:700;
     }
 
+    .status-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .status-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--soft);
+      font-size:.92rem;
+    }
+
+    .status-live{
+      color:var(--success);
+      font-weight:800;
+    }
+
+    .quick-actions{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+
+    .quick-btn{
+      min-height:48px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      font-weight:800;
+      transition:var(--transition);
+    }
+
+    .quick-btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(var(--accent-rgb), .24);
+      background:rgba(var(--accent-rgb), .08);
+    }
+
     .section-shell{
       display:grid;
       gap:18px;
@@ -848,13 +916,6 @@
       font-size:clamp(2rem, 4vw, 3.2rem);
       letter-spacing:-.05em;
       line-height:1;
-    }
-
-    .section-head p{
-      margin:12px 0 0;
-      color:var(--muted);
-      max-width:760px;
-      line-height:1.8;
     }
 
     .headline-badge{
@@ -978,19 +1039,6 @@
       line-height:1.75;
     }
 
-    .avatar{
-      width:72px;
-      height:72px;
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      margin-bottom:14px;
-      font-weight:900;
-      color:#0d0d0d;
-      background:linear-gradient(135deg, var(--accent), #fff0bb);
-      box-shadow:0 0 22px rgba(var(--accent-rgb), .18);
-    }
-
     .badge{
       display:inline-flex;
       align-items:center;
@@ -1003,6 +1051,20 @@
       font-size:.82rem;
       font-weight:800;
       margin-bottom:12px;
+    }
+
+    .section-mini-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .section-mini-head h3{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:-.03em;
     }
 
     .employee-card{padding:16px}
@@ -1090,7 +1152,7 @@
 
     .split{
       display:grid;
-      grid-template-columns:1.06fr .94fr;
+      grid-template-columns:1.08fr .92fr;
       gap:18px;
     }
 
@@ -1110,37 +1172,127 @@
       border:1px solid rgba(255,255,255,.08);
     }
 
-    .theme-showcase{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
+    .fleet-card{padding:18px}
 
-    .theme-card{
-      padding:18px;
-      border-radius:24px;
+    .fleet-image{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      border-radius:22px;
       border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.03);
-      transition:var(--transition);
+      margin-bottom:14px;
     }
 
-    .theme-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(var(--accent-rgb), .24);
-    }
-
-    .theme-card h4{margin:0 0 8px}
-    .theme-swatches{
+    .fleet-meta{
       display:flex;
-      gap:8px;
-      margin-top:10px;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
     }
 
-    .theme-swatches span{
-      width:16px;
-      height:16px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.12);
+    .chip{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:#eef4ff;
+      font-size:.82rem;
+      font-weight:800;
+    }
+
+    .compare{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .compare-box{
+      padding:22px;
+      border-radius:28px;
+    }
+
+    .compare-box h3{
+      margin:0 0 12px;
+      font-size:1.3rem;
+    }
+
+    .compare-box ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .testi{
+      padding:24px;
+      border-radius:28px;
+      position:relative;
+    }
+
+    .testi-quote{
+      font-size:1.08rem;
+      line-height:1.9;
+      color:#eef2fa;
+      margin-bottom:16px;
+    }
+
+    .testi-author{
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .calculator{
+      display:grid;
+      grid-template-columns:1fr 340px;
+      gap:18px;
+    }
+
+    .calc-panel{
+      padding:24px;
+      border-radius:30px;
+    }
+
+    .calc-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .calc-output{
+      display:grid;
+      gap:12px;
+    }
+
+    .calc-price{
+      padding:20px;
+      border-radius:24px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .calc-price strong{
+      display:block;
+      font-size:2.2rem;
+      letter-spacing:-.05em;
+    }
+
+    .range-wrap{
+      margin-top:14px;
+    }
+
+    .range-wrap label{
+      display:block;
+      margin-bottom:10px;
+      color:#eef4ff;
+      font-weight:700;
+    }
+
+    input[type="range"]{
+      width:100%;
+      accent-color:var(--accent);
+      background:none;
+      padding:0;
     }
 
     .faq-list{
@@ -1348,7 +1500,7 @@
 
     .field{position:relative}
 
-    input,textarea{
+    input,textarea,select{
       width:100%;
       border:1px solid rgba(255,255,255,.1);
       background:rgba(255,255,255,.04);
@@ -1360,24 +1512,27 @@
     }
 
     input::placeholder,textarea::placeholder{color:#95a2ba}
+    select option{background:#111;color:#fff}
     textarea{
       min-height:160px;
       resize:vertical;
     }
 
     .field.valid input,
-    .field.valid textarea{
+    .field.valid textarea,
+    .field.valid select{
       border-color:rgba(113,255,183,.5);
       box-shadow:0 0 0 4px rgba(113,255,183,.08);
     }
 
     .field.invalid input,
-    .field.invalid textarea{
+    .field.invalid textarea,
+    .field.invalid select{
       border-color:rgba(255,122,152,.55);
       box-shadow:0 0 0 4px rgba(255,122,152,.08),0 0 18px rgba(255,122,152,.08);
     }
 
-    input:focus,textarea:focus{
+    input:focus,textarea:focus,select:focus{
       border-color:rgba(var(--accent-rgb), .46);
       box-shadow:0 0 0 4px rgba(var(--accent-rgb), .08), 0 0 22px rgba(var(--accent-rgb), .08);
     }
@@ -1478,7 +1633,7 @@
       padding:22px 24px;
       border-radius:28px;
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-start;
       gap:16px;
       flex-wrap:wrap;
       color:var(--muted);
@@ -1515,16 +1670,102 @@
       border-color:rgba(var(--accent-rgb), .2);
     }
 
+    .cmdk-overlay{
+      position:fixed;
+      inset:0;
+      z-index:5000;
+      background:rgba(0,0,0,.5);
+      backdrop-filter:blur(8px);
+      display:none;
+      place-items:start center;
+      padding-top:10vh;
+    }
+
+    .cmdk-overlay.open{display:grid}
+
+    .cmdk{
+      width:min(92vw, 720px);
+      border-radius:28px;
+      overflow:hidden;
+    }
+
+    .cmdk-head{
+      padding:14px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .cmdk-input{
+      width:100%;
+      min-height:54px;
+      border-radius:18px;
+    }
+
+    .cmdk-list{
+      padding:10px;
+      display:grid;
+      gap:8px;
+    }
+
+    .cmd-item{
+      width:100%;
+      text-align:left;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      font-weight:700;
+      transition:var(--transition);
+    }
+
+    .cmd-item:hover{
+      background:rgba(var(--accent-rgb), .08);
+      border-color:rgba(var(--accent-rgb), .24);
+    }
+
+    .toast-wrap{
+      position:fixed;
+      right:16px;
+      bottom:92px;
+      z-index:4500;
+      display:grid;
+      gap:10px;
+      width:min(92vw, 360px);
+    }
+
+    .toast{
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, var(--panel), var(--panel-2));
+      color:#fff;
+      box-shadow:0 18px 42px rgba(0,0,0,.28);
+      animation:toastIn .25s ease;
+    }
+
+    .toast small{
+      display:block;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    @keyframes toastIn{
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
     @media (max-width:1180px){
       .hero,
       .split,
       .contact-layout,
+      .calculator,
       .grid-4{
         grid-template-columns:1fr;
       }
       .grid-3{grid-template-columns:repeat(2,1fr)}
       .hero-stats{grid-template-columns:repeat(2,1fr)}
-      .theme-showcase{grid-template-columns:repeat(2,1fr)}
+      .compare{grid-template-columns:1fr}
+      .quick-actions{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:860px){
@@ -1540,17 +1781,20 @@
         display:grid;
         grid-template-columns:repeat(4,1fr);
       }
-      .grid-2,.grid-3,.field-row,.category-grid,.theme-showcase{
+      .grid-2,.grid-3,.field-row,.category-grid,.calc-grid{
         grid-template-columns:1fr;
       }
       .stepper{grid-template-columns:1fr}
       .hero-main,.hero-side{min-height:auto}
       .view{padding-bottom:120px}
-      .hero-title{font-size:clamp(2.3rem, 10vw, 4rem)}
+      .hero-title{font-size:clamp(2.4rem, 10vw, 4.2rem)}
+      .quick-actions{grid-template-columns:1fr}
+      .toast-wrap{bottom:118px}
     }
   </style>
 </head>
 <body class="theme-gold">
+  <div class="top-progress"></div>
   <div class="particles" id="particles"></div>
 
   <div class="splash" id="splash">
@@ -1562,7 +1806,7 @@
         <img src="logo.png" alt="Diamond Taxi Logo" class="glitch-logo">
       </div>
       <h1><span class="grad">Diamond Taxi</span></h1>
-      <p>Premium Mobility • Executive Presence • Diamond Class Service</p>
+      <p>Executive Mobility • Premium Presence • Diamond Class Service</p>
     </div>
   </div>
 
@@ -1572,12 +1816,36 @@
         <div class="diamond-ring"></div>
         <img src="logo.png" alt="Diamond Taxi Logo" class="glitch-logo" style="width:78px;">
       </div>
-      <h1><span class="grad">System wird geladen</span></h1>
-      <p>Premium Interface wird initialisiert</p>
+      <h1><span class="grad">Portal wird initialisiert</span></h1>
+      <p>Diamond Taxi Executive Interface</p>
       <div class="preloader-bar"><span></span></div>
-      <small>Diamond Taxi Portal</small>
+      <small>System Start</small>
     </div>
   </div>
+
+  <div class="cmdk-overlay" id="cmdkOverlay">
+    <div class="cmdk glass">
+      <div class="cmdk-head">
+        <input id="cmdkInput" class="cmdk-input" type="text" placeholder="Suchen oder springen …">
+      </div>
+      <div class="cmdk-list">
+        <button class="cmd-item" data-cmd-tab="home">Zu Start wechseln</button>
+        <button class="cmd-item" data-cmd-tab="philosophy">Zu Philosophie wechseln</button>
+        <button class="cmd-item" data-cmd-tab="leitung">Zu Leitung wechseln</button>
+        <button class="cmd-item" data-cmd-tab="team">Zu Team wechseln</button>
+        <button class="cmd-item" data-cmd-tab="preise">Zu Preise wechseln</button>
+        <button class="cmd-item" data-cmd-tab="fleet">Zu Flotte wechseln</button>
+        <button class="cmd-item" data-cmd-tab="kontakt">Zu Kontakt wechseln</button>
+        <button class="cmd-item" data-cmd-tab="faq">Zu FAQ wechseln</button>
+        <button class="cmd-item" data-cmd-theme="theme-gold">Theme: Gold Luxury</button>
+        <button class="cmd-item" data-cmd-theme="theme-blue">Theme: Neon Blue</button>
+        <button class="cmd-item" data-cmd-theme="theme-pink">Theme: Diamond Pink</button>
+        <button class="cmd-item" data-cmd-theme="theme-executive">Theme: Dark Executive</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
 
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="cursor-dot" id="cursorDot"></div>
@@ -1592,7 +1860,7 @@
             </div>
             <div class="brand-text">
               <strong>Diamond Taxi</strong>
-              <span>Premium Portal</span>
+              <span>Executive Portal</span>
             </div>
           </button>
 
@@ -1603,9 +1871,12 @@
               <button type="button" class="tab-link magnetic" data-tab-target="leitung">Leitung</button>
               <button type="button" class="tab-link magnetic" data-tab-target="team">Team</button>
               <button type="button" class="tab-link magnetic" data-tab-target="preise">Preise</button>
+              <button type="button" class="tab-link magnetic" data-tab-target="fleet">Flotte</button>
               <button type="button" class="tab-link magnetic" data-tab-target="kontakt">Kontakt</button>
               <button type="button" class="tab-link magnetic" data-tab-target="faq">FAQ</button>
             </nav>
+
+            <button class="mini-btn magnetic" id="cmdkToggle" type="button">⌘ Menü</button>
 
             <div class="theme-switcher" id="themeSwitcher">
               <button class="mini-btn magnetic" id="themeToggle" type="button">Themes</button>
@@ -1657,6 +1928,7 @@
     <main class="view">
       <div class="container">
         <div class="tab-panels">
+          <!-- HOME -->
           <section class="panel active" data-panel="home">
             <div class="hero">
               <article class="hero-main glass tilt-card">
@@ -1666,12 +1938,12 @@
                   mehr als nur Fahrten.
                 </h1>
                 <p class="hero-sub" id="heroSubtitle">
-                  Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt. Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten wir dich durch Alltag, Ausnahme und jede Situation dazwischen.
+                  Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt.
                 </p>
 
                 <div class="cta-row">
                   <button class="btn btn-primary magnetic" type="button" data-tab-target="kontakt">Jetzt Kontakt aufnehmen</button>
-                  <button class="btn btn-secondary magnetic" type="button" data-tab-target="preise">Leistungen ansehen</button>
+                  <button class="btn btn-secondary magnetic" type="button" data-tab-target="team">Team ansehen</button>
                 </div>
 
                 <div class="hero-stats">
@@ -1697,7 +1969,7 @@
               <aside class="hero-side glass tilt-card">
                 <div class="hud">
                   <span class="status-badge">System aktiv</span>
-                  <span style="color:var(--muted);font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;">Portal UI</span>
+                  <span style="color:var(--muted);font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;">Executive UI</span>
                 </div>
 
                 <div class="reactive-logo-wrap" id="logoWrap">
@@ -1716,92 +1988,36 @@
                     <span class="pill">Discord</span>
                   </div>
                 </div>
+
+                <div class="status-card">
+                  <h3>Live Status</h3>
+                  <div class="status-list">
+                    <div class="status-item"><span>Zentrale</span><span class="status-live">Aktiv</span></div>
+                    <div class="status-item"><span>Bewerbungen</span><span class="status-live">Offen</span></div>
+                    <div class="status-item"><span>VIP Service</span><span class="status-live">Verfügbar</span></div>
+                  </div>
+                </div>
+
+                <div class="quick-card">
+                  <h3>Schnellzugriff</h3>
+                  <div class="quick-actions">
+                    <button class="quick-btn magnetic" type="button" data-tab-target="leitung">Leitung</button>
+                    <button class="quick-btn magnetic" type="button" data-tab-target="team">Mitarbeiter</button>
+                    <button class="quick-btn magnetic" type="button" data-tab-target="preise">Preise</button>
+                    <button class="quick-btn magnetic" type="button" id="copyDiscordBtn">Discord</button>
+                  </div>
+                </div>
               </aside>
             </div>
           </section>
 
-<section class="panel" data-panel="philosophy">
-  <div class="section-shell">
-
-    <div class="section-head">
-      <div>
-        <div class="headline-badge">UNTERNEHMENSPHILOSOPHIE</div>
-        <h2>Philosophie & Auftritt</h2>
-        <p>
-          Diamond Taxi steht für weit mehr als reine Beförderung. Unser Anspruch ist es, Menschen in jeder Situation zuverlässig, sicher und stilvoll an ihr Ziel zu bringen. 
-          Dabei verbinden wir professionellen Service, starke Präsenz in der Stadt und höchste Verlässlichkeit zu einem Auftritt, der Vertrauen schafft und langfristig überzeugt.
-        </p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="grid-4">
-
-      <article class="card glass tilt-card">
-        <div class="icon">◆</div>
-        <h3>Verlässlichkeit</h3>
-        <p>
-          Pünktlichkeit, klare Abläufe und feste Strukturen sorgen dafür, dass sich unsere Kunden jederzeit auf uns verlassen können – ohne Kompromisse.
-        </p>
-      </article>
-
-      <article class="card glass tilt-card">
-        <div class="icon">⌁</div>
-        <h3>Professionalität</h3>
-        <p>
-          Jeder Einsatz wird mit einem hohen Anspruch an Auftreten, Kommunikation und Qualität durchgeführt – seriös, strukturiert und respektvoll.
-        </p>
-      </article>
-
-      <article class="card glass tilt-card">
-        <div class="icon">◌</div>
-        <h3>Sicherheit</h3>
-        <p>
-          Ob Alltag, Sonderfahrt oder sensible Situation – Sicherheit und Schutz unserer Fahrgäste stehen bei jeder Fahrt im Mittelpunkt.
-        </p>
-      </article>
-
-      <article class="card glass tilt-card">
-        <div class="icon">✦</div>
-        <h3>Premium Service</h3>
-        <p>
-          Wir verbinden Mobilität mit Stil, Diskretion und einem klaren Premium-Anspruch, damit jede Fahrt mehr ist als nur ein Transport.
-        </p>
-      </article>
-
-    </div>
-
-    <div class="split">
-
-      <article class="card glass tilt-card">
-        <div class="headline-badge">UNSER ANSPRUCH</div>
-        <h2 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;">
-          Mobilität mit Klasse
-        </h2>
-        <p style="margin:0;">
-          Diamond Taxi steht für strukturierte Abläufe, ein starkes Auftreten und einen Service, der sich bewusst von gewöhnlichen Fahrdiensten abhebt. 
-          Unser Ziel ist es, nicht nur Menschen zu transportieren, sondern ihnen ein sicheres, professionelles und hochwertiges Erlebnis zu bieten – 
-          egal ob im Alltag oder in besonderen Situationen.
-        </p>
-      </article>
-
-      <article class="location-photo tilt-card">
-        <img src="standort.png" alt="Standort von Diamond Taxi">
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-          <section class="panel" data-panel="leitung">
+          <!-- PHILOSOPHY -->
+          <section class="panel" data-panel="philosophy">
             <div class="section-shell">
               <div class="section-head">
                 <div>
-                  <div class="headline-badge">Management</div>
-                  <h2>Leitungs-Team</h2>
-                  
+                  <div class="headline-badge">UNTERNEHMENSPHILOSOPHIE</div>
+                  <h2>Philosophie & Auftritt</h2>
                 </div>
               </div>
 
@@ -1809,44 +2025,123 @@
 
               <div class="grid-4">
                 <article class="card glass tilt-card">
-                  <div class="avatar">TE</div>
-                  <span class="badge">CEO</span>
-                  <h3>Tommy Elechandro</h3>
-                  <p>Verantwortet Vision, Außenwirkung und die strategische Entwicklung von Diamond Taxi.</p>
+                  <div class="icon">◆</div>
+                  <h3>Verlässlichkeit</h3>
+                  <p>Pünktlichkeit, klare Abläufe und feste Strukturen sorgen dafür, dass sich unsere Kunden jederzeit auf uns verlassen können.</p>
                 </article>
                 <article class="card glass tilt-card">
-                  <div class="avatar">CS</div>
-                  <span class="badge">Geschäftsleitung</span>
-                  <h3>Christian Steiner</h3>
-                  <p>Verantwortlich für operative Prozesse, Organisation und die tägliche Struktur des Unternehmens.</p>
+                  <div class="icon">⌁</div>
+                  <h3>Professionalität</h3>
+                  <p>Jeder Einsatz wird mit hohem Anspruch an Auftreten, Kommunikation und Qualität durchgeführt.</p>
                 </article>
                 <article class="card glass tilt-card">
-                  <div class="avatar">WM</div>
-                  <span class="badge">Personalleitung</span>
-                  <h3>Wladimir Makarof</h3>
-                  <p>Betreut Recruiting, interne Entwicklung, Bewerbungen und personelle Abläufe.</p>
+                  <div class="icon">◌</div>
+                  <h3>Sicherheit</h3>
+                  <p>Ob Alltag, Sonderfahrt oder sensible Situation – Sicherheit und Schutz stehen immer im Mittelpunkt.</p>
                 </article>
                 <article class="card glass tilt-card">
-                  <div class="avatar">VK</div>
-                  <span class="badge">Personalleitung</span>
-                  <h3>Valeria Kalash</h3>
-                  <p>Begleitet neue Bewerbungen, Teamaufbau und personelle Weiterentwicklung.</p>
+                  <div class="icon">✦</div>
+                  <h3>Premium Service</h3>
+                  <p>Wir verbinden Mobilität mit Stil, Diskretion und einem klaren Premium-Anspruch.</p>
+                </article>
+              </div>
+
+              <div class="split">
+                <article class="card glass tilt-card">
+                  <div class="headline-badge">UNSER ANSPRUCH</div>
+                  <h2 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;">Mobilität mit Klasse</h2>
+                  <p style="margin:0;">Diamond Taxi steht für strukturierte Abläufe, ein starkes Auftreten und einen Service, der sich bewusst von gewöhnlichen Fahrdiensten abhebt. Unser Ziel ist es, nicht nur Menschen zu transportieren, sondern ihnen ein sicheres, professionelles und hochwertiges Erlebnis zu bieten.</p>
+                </article>
+
+                <article class="location-photo tilt-card">
+                  <img src="standort.png" alt="Standort von Diamond Taxi">
+                </article>
+              </div>
+
+              <div class="compare">
+                <article class="compare-box glass tilt-card">
+                  <h3>Standarddienst</h3>
+                  <ul>
+                    <li>Nur Transport von A nach B</li>
+                    <li>Wenig Persönlichkeit im Service</li>
+                    <li>Kaum Premium-Anspruch</li>
+                    <li>Unauffälliger Auftritt</li>
+                  </ul>
+                </article>
+                <article class="compare-box glass tilt-card">
+                  <h3>Diamond Taxi</h3>
+                  <ul>
+                    <li>Mobilität mit Stil und Präsenz</li>
+                    <li>Klare Strukturen und Professionalität</li>
+                    <li>VIP- und Security-Erweiterungen</li>
+                    <li>Verlässlichkeit in Alltag und Ausnahme</li>
+                  </ul>
                 </article>
               </div>
             </div>
           </section>
 
-          <section class="panel" data-panel="team">
+          <!-- LEITUNG -->
+          <section class="panel" data-panel="leitung">
             <div class="section-shell">
               <div class="section-head">
                 <div>
-                  <div class="headline-badge">Employee Highlights</div>
-                  <h2>Mitarbeiter des Monats</h2>
-                  
+                  <div class="headline-badge">MANAGEMENT</div>
+                  <h2>Leitungs-Team</h2>
                 </div>
               </div>
 
               <div class="divider"></div>
+
+              <div class="grid-3">
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="tommy.png" alt="Tommy Elechandro">
+                    <div class="employee-overlay">Diamond Executive</div>
+                  </div>
+                  <span class="badge">CEO</span>
+                  <h3>Tommy Elechandro</h3>
+                  <p>Verantwortet Vision, Außenwirkung und die strategische Entwicklung von Diamond Taxi.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="valeria.png" alt="Valeria Kalash">
+                    <div class="employee-overlay">Human Resources</div>
+                  </div>
+                  <span class="badge">Personalleitung</span>
+                  <h3>Valeria Kalash</h3>
+                  <p>Begleitet Bewerbungen, Teamaufbau und personelle Weiterentwicklung.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="wladim.png" alt="Wladim Makarof">
+                    <div class="employee-overlay">Human Resources</div>
+                  </div>
+                  <span class="badge">Personalleitung</span>
+                  <h3>Wladim Makarof</h3>
+                  <p>Betreut Recruiting, interne Entwicklung und personelle Abläufe im Unternehmen.</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- TEAM -->
+          <section class="panel" data-panel="team">
+            <div class="section-shell">
+              <div class="section-head">
+                <div>
+                  <div class="headline-badge">TEAM</div>
+                  <h2>Mitarbeiter & Auszeichnungen</h2>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="section-mini-head">
+                <h3>Mitarbeiter des Monats</h3>
+              </div>
 
               <div class="grid-3">
                 <article class="card glass employee-card tilt-card">
@@ -1858,6 +2153,7 @@
                   <h3>Jeff Adil Cüneyt Rince</h3>
                   <p>Steht aktuell für starke Leistung, Präsenz und professionelles Auftreten.</p>
                 </article>
+
                 <article class="card glass employee-card tilt-card">
                   <div class="employee-frame">
                     <img class="employee-photo" src="joe.png" alt="Joe Barbaro">
@@ -1867,6 +2163,7 @@
                   <h3>Joe Barbaro</h3>
                   <p>Überzeugt mit Zuverlässigkeit, Wirkung nach außen und starker Performance.</p>
                 </article>
+
                 <article class="card glass employee-card tilt-card">
                   <div class="employee-frame">
                     <img class="employee-photo" src="rafa.png" alt="Rafa Quintero">
@@ -1877,16 +2174,89 @@
                   <p>Wird aufgrund seines Engagements und seiner aktuellen Leistung hervorgehoben.</p>
                 </article>
               </div>
+
+              <div class="divider"></div>
+
+              <div class="section-mini-head">
+                <h3>Alle Mitarbeitenden</h3>
+              </div>
+
+              <div class="grid-3">
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="hamza.png" alt="Hamza Ali">
+                    <div class="employee-overlay">Diamond Staff</div>
+                  </div>
+                  <span class="badge">Mitarbeiter</span>
+                  <h3>Hamza Ali</h3>
+                  <p>Teil des operativen Teams und im täglichen Einsatz für Diamond Taxi unterwegs.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="janina.png" alt="Janina Romin">
+                    <div class="employee-overlay">Diamond Staff</div>
+                  </div>
+                  <span class="badge">Mitarbeiterin</span>
+                  <h3>Janina Romin</h3>
+                  <p>Unterstützt den täglichen Ablauf mit Präsenz, Zuverlässigkeit und starkem Auftreten.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="jeff.png" alt="Jeff Adil Cüneyt Rince">
+                    <div class="employee-overlay">Diamond Staff</div>
+                  </div>
+                  <span class="badge">Mitarbeiter</span>
+                  <h3>Jeff Adil Cüneyt Rince</h3>
+                  <p>Gehört zum aktiven Team und wurde zusätzlich als Mitarbeiter des Monats ausgezeichnet.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="joe.png" alt="Joe Barbaro">
+                    <div class="employee-overlay">Diamond Staff</div>
+                  </div>
+                  <span class="badge">Mitarbeiter</span>
+                  <h3>Joe Barbaro</h3>
+                  <p>Starker Teil des Teams und zusätzlich als Mitarbeiter des Monats hervorgehoben.</p>
+                </article>
+
+                <article class="card glass employee-card tilt-card">
+                  <div class="employee-frame">
+                    <img class="employee-photo" src="rafa.png" alt="Rafa Quintero">
+                    <div class="employee-overlay">Diamond Staff</div>
+                  </div>
+                  <span class="badge">Mitarbeiter</span>
+                  <h3>Rafa Quintero</h3>
+                  <p>Aktiver Mitarbeiter mit hohem Engagement und zusätzlicher Auszeichnung als Mitarbeiter des Monats.</p>
+                </article>
+              </div>
+
+              <div class="grid-3">
+                <article class="testi glass tilt-card">
+                  <div class="testi-quote">„Professionell, schnell und immer mit einem starken Auftreten – genau so muss ein Premium-Service in der Stadt wirken.“</div>
+                  <div class="testi-author">Kundenstimme • City Business</div>
+                </article>
+                <article class="testi glass tilt-card">
+                  <div class="testi-quote">„Diamond Taxi ist nicht einfach nur ein Fahrdienst – es fühlt sich an wie ein Teil der Stadt, auf den man sich verlassen kann.“</div>
+                  <div class="testi-author">Kundenstimme • Retro City</div>
+                </article>
+                <article class="testi glass tilt-card">
+                  <div class="testi-quote">„Ob im Alltag oder bei besonderen Einsätzen: Der Service bleibt ruhig, sicher und auf hohem Niveau.“</div>
+                  <div class="testi-author">Kundenstimme • Executive Client</div>
+                </article>
+              </div>
             </div>
           </section>
 
+          <!-- PREISE -->
           <section class="panel" data-panel="preise">
             <div class="section-shell">
               <div class="section-head">
                 <div>
-                  <div class="headline-badge">Pricing & Services</div>
+                  <div class="headline-badge">PRICING & SERVICES</div>
                   <h2>Leistungen & Preise</h2>
-                  
                 </div>
               </div>
 
@@ -1960,16 +2330,113 @@
                   </div>
                 </article>
               </div>
+
+              <div class="calculator">
+                <article class="calc-panel glass tilt-card">
+                  <div class="headline-badge">PREISRECHNER</div>
+                  <h2 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;">Fahrt kalkulieren</h2>
+                  <p style="margin:0;color:var(--muted);line-height:1.8;">Wähle Strecke und Service aus, um sofort einen Richtwert zu erhalten.</p>
+
+                  <div class="calc-grid">
+                    <div>
+                      <div class="range-wrap">
+                        <label for="meterRange">Strecke mit Fahrgast</label>
+                        <input id="meterRange" type="range" min="0" max="5000" step="50" value="850">
+                      </div>
+                      <div class="range-wrap">
+                        <label for="securityTime">Security-Dauer (Minuten)</label>
+                        <input id="securityTime" type="range" min="0" max="120" step="30" value="0">
+                      </div>
+                    </div>
+
+                    <div>
+                      <label style="display:block;margin-bottom:10px;color:#eef4ff;font-weight:700;">Service</label>
+                      <select id="serviceSelect">
+                        <option value="standard">Standardfahrt</option>
+                        <option value="border">Grenzübergang</option>
+                        <option value="vip">VIP Shuttle</option>
+                        <option value="security">Security</option>
+                      </select>
+
+                      <label style="display:block;margin:16px 0 10px;color:#eef4ff;font-weight:700;">Zusatzoption</label>
+                      <select id="securityTier">
+                        <option value="20000">Security Standard</option>
+                        <option value="30000">Security Plus</option>
+                      </select>
+                    </div>
+                  </div>
+                </article>
+
+                <aside class="calc-panel glass tilt-card">
+                  <div class="calc-output">
+                    <div class="calc-price">
+                      <span style="display:block;color:var(--muted);margin-bottom:8px;">Gesamtpreis</span>
+                      <strong id="calcTotal">0 $</strong>
+                    </div>
+                    <div class="mini-item">Anfahrt: <strong id="calcBase">100 $</strong></div>
+                    <div class="mini-item">Meterpreis: <strong id="calcMeters">0 $</strong></div>
+                    <div class="mini-item">Zusatzservice: <strong id="calcAddon">0 $</strong></div>
+                    <div class="mini-item">Security: <strong id="calcSecurity">0 $</strong></div>
+                  </div>
+                </aside>
+              </div>
             </div>
           </section>
 
+          <!-- FLEET -->
+          <section class="panel" data-panel="fleet">
+            <div class="section-shell">
+              <div class="section-head">
+                <div>
+                  <div class="headline-badge">FLOTTE & EINSATZ</div>
+                  <h2>Fahrzeug-Showcase</h2>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="grid-3">
+                <article class="card glass fleet-card tilt-card">
+                  <img class="fleet-image" src="standort.png" alt="Diamond Taxi Fahrzeug 1">
+                  <h3>City Class</h3>
+                  <p>Ideal für schnelle und verlässliche Standardfahrten innerhalb der Stadt.</p>
+                  <div class="fleet-meta">
+                    <span class="chip">Standardfahrt</span>
+                    <span class="chip">Stadtverkehr</span>
+                    <span class="chip">Zuverlässig</span>
+                  </div>
+                </article>
+                <article class="card glass fleet-card tilt-card">
+                  <img class="fleet-image" src="standort.png" alt="Diamond Taxi Fahrzeug 2">
+                  <h3>Executive Shuttle</h3>
+                  <p>Für VIP-Transporte, Events und hochwertige Einsätze mit starkem Auftritt.</p>
+                  <div class="fleet-meta">
+                    <span class="chip">VIP Shuttle</span>
+                    <span class="chip">Executive</span>
+                    <span class="chip">Premium</span>
+                  </div>
+                </article>
+                <article class="card glass fleet-card tilt-card">
+                  <img class="fleet-image" src="standort.png" alt="Diamond Taxi Fahrzeug 3">
+                  <h3>Security Unit</h3>
+                  <p>Für sensible Situationen, Personenschutz und Security-Einsätze mit Präsenz.</p>
+                  <div class="fleet-meta">
+                    <span class="chip">Security</span>
+                    <span class="chip">Schutz</span>
+                    <span class="chip">Sonderlage</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- KONTAKT -->
           <section class="panel" data-panel="kontakt">
             <div class="section-shell">
               <div class="section-head">
                 <div>
-                  <div class="headline-badge">Contact & Recruiting</div>
+                  <div class="headline-badge">CONTACT & RECRUITING</div>
                   <h2>Kontakt & Bewerbung</h2>
-                  
                 </div>
               </div>
 
@@ -1982,9 +2449,10 @@
 
                   <div class="mini-grid">
                     <div class="mini-item">Allgemeine Fragen an Diamond Taxi</div>
-                    <div class="mini-item">Bewerbungen als Mitarbeiter einreichen</div>
-                    <div class="mini-item">Beschwerde einreichen</div>
-                    
+                    <div class="mini-item">Bewerbungen an die Personalleitung</div>
+                    <div class="mini-item">Beschwerden mit Rollen-Ping</div>
+                    <div class="mini-item">Premium Funnel statt Standardformular</div>
+                    <div class="mini-item">Live Validierung und modernes Feedback</div>
                   </div>
 
                   <a class="discord-btn magnetic" href="https://discord.gg/sNvj8eBeVj" target="_blank" rel="noopener noreferrer">
@@ -2045,9 +2513,14 @@
                             <span class="field-hint"></span>
                           </div>
                           <div class="field" data-validate="contact">
-                            <input type="text" id="contact" placeholder="Deine Handynummer" required>
+                            <input type="text" id="contact" placeholder="Dein Kontaktweg" required>
                             <span class="field-hint"></span>
                           </div>
+                        </div>
+
+                        <div class="field" data-validate="subject">
+                          <input type="text" id="subjectLine" placeholder="Kurzbeschreibung / Betreff" required>
+                          <span class="field-hint"></span>
                         </div>
 
                         <div class="field" data-validate="message">
@@ -2068,7 +2541,8 @@
                       <div class="mini-grid" style="margin-top:14px;">
                         <div class="mini-item"><strong>Kategorie:</strong> <span id="reviewCategory">–</span></div>
                         <div class="mini-item"><strong>Name:</strong> <span id="reviewName">–</span></div>
-                        <div class="mini-item"><strong>Handynummer:</strong> <span id="reviewContact">–</span></div>
+                        <div class="mini-item"><strong>Kontaktweg:</strong> <span id="reviewContact">–</span></div>
+                        <div class="mini-item"><strong>Betreff:</strong> <span id="reviewSubject">–</span></div>
                         <div class="mini-item"><strong>Nachricht:</strong> <span id="reviewMessage">–</span></div>
                       </div>
 
@@ -2089,11 +2563,12 @@
             </div>
           </section>
 
+          <!-- FAQ -->
           <section class="panel" data-panel="faq">
             <div class="section-shell">
               <div class="section-head">
                 <div>
-                  <div class="headline-badge">Questions</div>
+                  <div class="headline-badge">QUESTIONS</div>
                   <h2>FAQ</h2>
                 </div>
               </div>
@@ -2120,7 +2595,7 @@
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Weil die Website nun wie ein internes Tab-System funktioniert. Dadurch fühlt sie sich moderner und hochwertiger an.</p>
+                      <p>Weil die Website wie ein internes Premium-Portal funktioniert. Dadurch fühlt sie sich moderner, strukturierter und hochwertiger an.</p>
                     </div>
                   </div>
                 </div>
@@ -2132,19 +2607,19 @@
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Ja. Über den Theme-Switcher lassen sich verschiedene Farbwelten live wechseln.</p>
+                      <p>Ja. Über den Theme-Switcher oder das Schnellmenü lassen sich verschiedene Farbwelten live wechseln.</p>
                     </div>
                   </div>
                 </div>
 
                 <div class="faq-item">
                   <button class="faq-trigger magnetic" type="button">
-                    <span>Funktioniert der Discord Webhook direkt auf GitHub Pages?</span>
+                    <span>Wozu dient das Schnellmenü?</span>
                     <span class="faq-icon">+</span>
                   </button>
                   <div class="faq-content">
                     <div class="faq-inner">
-                      <p>Oft nicht zuverlässig, weil direkte Requests an Discord auf statischen Seiten durch CORS blockiert werden können. Dafür ist meist ein kleiner Proxy oder Worker nötig.</p>
+                      <p>Über das Schnellmenü kannst du per Tastenkürzel sofort zwischen Bereichen springen und Themes wechseln.</p>
                     </div>
                   </div>
                 </div>
@@ -2172,10 +2647,7 @@
         <div class="footer-card glass">
           <div>
             <strong>Diamond Taxi</strong> • Retro City<br>
-           
-          </div>
-          <div>
-           
+            Executive Portal mit Tabs, Teamübersicht, Fleet Showcase, Calculator und Recruiting Funnel.
           </div>
         </div>
       </div>
@@ -2185,32 +2657,42 @@
   <div class="bottom-nav glass">
     <button type="button" class="tab-link active" data-tab-target="home">Start</button>
     <button type="button" class="tab-link" data-tab-target="philosophy">Style</button>
-    <button type="button" class="tab-link" data-tab-target="preise">Preise</button>
+    <button type="button" class="tab-link" data-tab-target="team">Team</button>
     <button type="button" class="tab-link" data-tab-target="kontakt">Kontakt</button>
   </div>
 
   <script>
-    const WEBHOOK_URL = "https://discord.com/api/webhooks/1485367512303665364/_xK8KZC8CmbS4baBeHczQonkyXAcX3uTfukaNSVbKS5_iQakDjlgXkEXDHQH2iovhLIS";
-    const ROLE_ID = "1482761218832863352";
+    const WEBHOOK_URL = "DEIN_DISCORD_WEBHOOK_LINK";
+    const ROLE_ID = "DEINE_LEITUNG_ROLLEN_ID";
+    const DISCORD_INVITE = "https://discord.gg/sNvj8eBeVj";
 
     const HERO_CONTENT = {
       eyebrow: "Diamond Class Service",
       titleHtml: '<span class="grad">Diamond Taxi</span><br>mehr als nur Fahrten.',
-      subtitle: "Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt. Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten wir dich durch Alltag, Ausnahme und jede Situation dazwischen."
+      subtitle: "Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt."
     };
 
     document.getElementById("heroEyebrow").textContent = HERO_CONTENT.eyebrow;
     document.getElementById("heroTitle").innerHTML = HERO_CONTENT.titleHtml;
     document.getElementById("heroSubtitle").textContent = HERO_CONTENT.subtitle;
 
+    function showToast(title, text = "") {
+      const wrap = document.getElementById("toastWrap");
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.innerHTML = `<strong>${title}</strong>${text ? `<small>${text}</small>` : ""}`;
+      wrap.appendChild(toast);
+      setTimeout(() => toast.remove(), 3200);
+    }
+
     const splash = document.getElementById("splash");
     const preloader = document.getElementById("preloader");
 
     window.addEventListener("load", () => {
-      setTimeout(() => splash.classList.add("hidden"), 1500);
-      setTimeout(() => preloader.classList.remove("hidden"), 1350);
-      setTimeout(() => preloader.classList.add("hidden"), 3200);
-      setTimeout(runCountersForActivePanel, 3200);
+      setTimeout(() => splash.classList.add("hidden"), 1400);
+      setTimeout(() => preloader.classList.remove("hidden"), 1250);
+      setTimeout(() => preloader.classList.add("hidden"), 3000);
+      setTimeout(runCountersForActivePanel, 3000);
     });
 
     const cursorDot = document.getElementById("cursorDot");
@@ -2239,7 +2721,7 @@
     animateCursor();
 
     function bindHoverCursor() {
-      document.querySelectorAll("a, button, input, textarea, .magnetic").forEach((el) => {
+      document.querySelectorAll("a, button, input, textarea, select, .magnetic").forEach((el) => {
         el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
         el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
       });
@@ -2260,11 +2742,11 @@
     });
 
     const particlesWrap = document.getElementById("particles");
-    for (let i = 0; i < 28; i++) {
+    for (let i = 0; i < 32; i++) {
       const p = document.createElement("span");
       p.className = "particle";
       p.style.left = Math.random() * 100 + "%";
-      p.style.top = (20 + Math.random() * 80) + "%";
+      p.style.top = (15 + Math.random() * 85) + "%";
       p.style.animationDuration = (6 + Math.random() * 8) + "s";
       p.style.animationDelay = (-Math.random() * 8) + "s";
       p.style.opacity = (0.2 + Math.random() * 0.6).toFixed(2);
@@ -2275,19 +2757,18 @@
     const themeToggle = document.getElementById("themeToggle");
     const themeOptions = document.querySelectorAll(".theme-option");
 
+    function setTheme(themeName) {
+      document.body.classList.remove("theme-gold", "theme-blue", "theme-pink", "theme-executive");
+      document.body.classList.add(themeName);
+      themeOptions.forEach(opt => opt.classList.toggle("active", opt.dataset.theme === themeName));
+      localStorage.setItem("diamond_theme", themeName);
+      showToast("Theme gewechselt", themeName.replace("theme-", ""));
+    }
+
     themeToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       themeSwitcher.classList.toggle("open");
     });
-
-    function setTheme(themeName) {
-      document.body.classList.remove("theme-gold", "theme-blue", "theme-pink", "theme-executive");
-      document.body.classList.add(themeName);
-      themeOptions.forEach(opt => {
-        opt.classList.toggle("active", opt.dataset.theme === themeName);
-      });
-      localStorage.setItem("diamond_theme", themeName);
-    }
 
     themeOptions.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -2297,22 +2778,26 @@
     });
 
     const savedTheme = localStorage.getItem("diamond_theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme("theme-gold");
-    }
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme("theme-gold");
 
     document.addEventListener("click", (e) => {
-      if (!themeSwitcher.contains(e.target)) {
-        themeSwitcher.classList.remove("open");
-      }
+      if (!themeSwitcher.contains(e.target)) themeSwitcher.classList.remove("open");
     });
 
     const motionToggle = document.getElementById("motionToggle");
+    const savedMotion = localStorage.getItem("diamond_motion");
+    if (savedMotion === "off") {
+      document.body.classList.add("reduced-motion");
+      motionToggle.textContent = "Motion Off";
+    }
+
     motionToggle.addEventListener("click", () => {
       document.body.classList.toggle("reduced-motion");
-      motionToggle.textContent = document.body.classList.contains("reduced-motion") ? "Motion Off" : "Motion";
+      const off = document.body.classList.contains("reduced-motion");
+      motionToggle.textContent = off ? "Motion Off" : "Motion";
+      localStorage.setItem("diamond_motion", off ? "off" : "on");
+      showToast(off ? "Bewegung reduziert" : "Bewegung aktiviert");
     });
 
     const panels = document.querySelectorAll(".panel");
@@ -2337,6 +2822,61 @@
 
     tabButtons.forEach((btn) => {
       btn.addEventListener("click", () => activateTab(btn.dataset.tabTarget));
+    });
+
+    document.getElementById("copyDiscordBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(DISCORD_INVITE);
+        showToast("Discord-Link kopiert", DISCORD_INVITE);
+      } catch {
+        showToast("Discord-Link", DISCORD_INVITE);
+      }
+    });
+
+    const cmdkOverlay = document.getElementById("cmdkOverlay");
+    const cmdkToggle = document.getElementById("cmdkToggle");
+    const cmdkInput = document.getElementById("cmdkInput");
+    const cmdItems = [...document.querySelectorAll(".cmd-item")];
+
+    function openCmdk() {
+      cmdkOverlay.classList.add("open");
+      cmdkInput.value = "";
+      filterCmdk("");
+      setTimeout(() => cmdkInput.focus(), 20);
+    }
+
+    function closeCmdk() {
+      cmdkOverlay.classList.remove("open");
+    }
+
+    function filterCmdk(query) {
+      const q = query.toLowerCase().trim();
+      cmdItems.forEach(item => {
+        item.classList.toggle("hidden", !item.textContent.toLowerCase().includes(q));
+      });
+    }
+
+    cmdkToggle.addEventListener("click", openCmdk);
+    cmdkOverlay.addEventListener("click", (e) => {
+      if (e.target === cmdkOverlay) closeCmdk();
+    });
+    cmdkInput.addEventListener("input", () => filterCmdk(cmdkInput.value));
+
+    document.addEventListener("keydown", (e) => {
+      const isMac = navigator.platform.toUpperCase().includes("MAC");
+      if ((isMac ? e.metaKey : e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openCmdk();
+      }
+      if (e.key === "Escape") closeCmdk();
+    });
+
+    cmdItems.forEach(item => {
+      item.addEventListener("click", () => {
+        if (item.dataset.cmdTab) activateTab(item.dataset.cmdTab);
+        if (item.dataset.cmdTheme) setTheme(item.dataset.cmdTheme);
+        closeCmdk();
+      });
     });
 
     const logoWrap = document.getElementById("logoWrap");
@@ -2404,11 +2944,47 @@
     }
 
     document.querySelectorAll(".faq-item").forEach((item) => {
-      const trigger = item.querySelector(".faq-trigger");
-      trigger.addEventListener("click", () => {
+      item.querySelector(".faq-trigger").addEventListener("click", () => {
         item.classList.toggle("open");
       });
     });
+
+    const meterRange = document.getElementById("meterRange");
+    const securityTime = document.getElementById("securityTime");
+    const serviceSelect = document.getElementById("serviceSelect");
+    const securityTier = document.getElementById("securityTier");
+
+    function calcPrice() {
+      const meters = Number(meterRange.value || 0);
+      const secMinutes = Number(securityTime.value || 0);
+      const secTier = Number(securityTier.value || 0);
+      const service = serviceSelect.value;
+
+      let base = 100;
+      let meterCost = meters * 4;
+      let addon = 0;
+      let security = 0;
+
+      if (service === "border") addon += 750;
+      if (service === "vip") addon += 10000;
+      if (service === "security") {
+        const units = secMinutes / 30;
+        security += units * secTier;
+        base = 0;
+        meterCost = 0;
+      }
+
+      const total = base + meterCost + addon + security;
+
+      document.getElementById("calcBase").textContent = `${base.toLocaleString("de-DE")} $`;
+      document.getElementById("calcMeters").textContent = `${meterCost.toLocaleString("de-DE")} $`;
+      document.getElementById("calcAddon").textContent = `${addon.toLocaleString("de-DE")} $`;
+      document.getElementById("calcSecurity").textContent = `${security.toLocaleString("de-DE")} $`;
+      document.getElementById("calcTotal").textContent = `${total.toLocaleString("de-DE")} $`;
+    }
+
+    [meterRange, securityTime, serviceSelect, securityTier].forEach(el => el.addEventListener("input", calcPrice));
+    calcPrice();
 
     let chosenCategory = "";
     const stepIndicators = document.querySelectorAll("[data-step-indicator]");
@@ -2419,15 +2995,12 @@
     const reviewCategory = document.getElementById("reviewCategory");
     const reviewName = document.getElementById("reviewName");
     const reviewContact = document.getElementById("reviewContact");
+    const reviewSubject = document.getElementById("reviewSubject");
     const reviewMessage = document.getElementById("reviewMessage");
 
     function setStep(step) {
-      stepIndicators.forEach((el) => {
-        el.classList.toggle("active", Number(el.dataset.stepIndicator) === step);
-      });
-      stepPanels.forEach((el) => {
-        el.classList.toggle("active", Number(el.dataset.stepPanel) === step);
-      });
+      stepIndicators.forEach((el) => el.classList.toggle("active", Number(el.dataset.stepIndicator) === step));
+      stepPanels.forEach((el) => el.classList.toggle("active", Number(el.dataset.stepPanel) === step));
     }
 
     categoryCards.forEach((card) => {
@@ -2440,7 +3013,10 @@
     });
 
     document.getElementById("toStep2").addEventListener("click", () => {
-      if (!chosenCategory) return;
+      if (!chosenCategory) {
+        showToast("Bitte zuerst eine Kategorie wählen");
+        return;
+      }
       setStep(2);
     });
 
@@ -2449,12 +3025,13 @@
     const validators = {
       name: (value) => value.trim().length >= 2,
       contact: (value) => value.trim().length >= 3,
+      subject: (value) => value.trim().length >= 3,
       message: (value) => value.trim().length >= 10
     };
 
     function setFieldState(field, isValid, text) {
       field.classList.remove("valid", "invalid");
-      const input = field.querySelector("input, textarea");
+      const input = field.querySelector("input, textarea, select");
       const hint = field.querySelector(".field-hint");
 
       if (!input.value.trim()) {
@@ -2469,7 +3046,7 @@
 
     function validateField(field) {
       const type = field.dataset.validate;
-      const input = field.querySelector("input, textarea");
+      const input = field.querySelector("input, textarea, select");
       if (!input || !validators[type]) return true;
 
       const value = input.value || "";
@@ -2477,7 +3054,8 @@
 
       let msg = "";
       if (type === "name") msg = ok ? "Name sieht gut aus." : "Bitte mindestens 2 Zeichen eingeben.";
-      if (type === "contact") msg = ok ? "Handynummer ist gültig." : "Bitte eine Handynummer angeben.";
+      if (type === "contact") msg = ok ? "Kontaktweg ist gültig." : "Bitte einen Kontaktweg angeben.";
+      if (type === "subject") msg = ok ? "Betreff ist gültig." : "Bitte einen kurzen Betreff eingeben.";
       if (type === "message") msg = ok ? "Nachricht ist lang genug." : "Bitte mindestens 10 Zeichen schreiben.";
 
       setFieldState(field, ok, msg);
@@ -2492,7 +3070,7 @@
       return ok;
     }
 
-    document.querySelectorAll(".field[data-validate] input, .field[data-validate] textarea").forEach((input) => {
+    document.querySelectorAll(".field[data-validate] input, .field[data-validate] textarea, .field[data-validate] select").forEach((input) => {
       input.addEventListener("input", () => validateField(input.closest(".field")));
       input.addEventListener("blur", () => validateField(input.closest(".field")));
     });
@@ -2505,6 +3083,7 @@
       reviewCategory.textContent = chosenCategory || "–";
       reviewName.textContent = document.getElementById("name").value.trim() || "–";
       reviewContact.textContent = document.getElementById("contact").value.trim() || "–";
+      reviewSubject.textContent = document.getElementById("subjectLine").value.trim() || "–";
       reviewMessage.textContent = document.getElementById("message").value.trim() || "–";
       setStep(3);
     });
@@ -2518,6 +3097,7 @@
     sendBtn.addEventListener("click", async () => {
       const name = document.getElementById("name")?.value.trim() || "";
       const contact = document.getElementById("contact")?.value.trim() || "";
+      const subjectLine = document.getElementById("subjectLine")?.value.trim() || "";
       const message = document.getElementById("message")?.value.trim() || "";
       const subject = selectedCategoryInput.value.trim() || chosenCategory || "";
 
@@ -2556,12 +3136,13 @@
         embeds: [
           {
             title: "Neue Diamond Taxi Nachricht",
-            description: "Es wurde eine neue Nachricht über das Premium-Portal gesendet.",
+            description: subjectLine,
             color: 16766720,
             fields: [
               { name: "Name", value: name },
-              { name: "Handynummer", value: contact },
+              { name: "Kontaktweg", value: contact },
               { name: "Kategorie", value: subject },
+              { name: "Betreff", value: subjectLine },
               { name: "Nachricht", value: message.length > 1024 ? message.slice(0, 1021) + "..." : message }
             ],
             footer: { text: "Diamond Taxi • Retro City" },
@@ -2587,6 +3168,7 @@
         formStatus.textContent = "Deine Nachricht wurde erfolgreich übermittelt.";
         formStatus.className = "form-status success";
         successBadgeWrap.innerHTML = '<div class="success-check">✓</div>';
+        showToast("Nachricht erfolgreich gesendet");
 
         document.getElementById("funnelForm").reset();
         selectedCategoryInput.value = "";
@@ -2594,12 +3176,14 @@
         categoryCards.forEach(x => x.classList.remove("active"));
         document.querySelectorAll(".field").forEach(field => {
           field.classList.remove("valid", "invalid");
-          field.querySelector(".field-hint").textContent = "";
+          const hint = field.querySelector(".field-hint");
+          if (hint) hint.textContent = "";
         });
 
         reviewCategory.textContent = "–";
         reviewName.textContent = "–";
         reviewContact.textContent = "–";
+        reviewSubject.textContent = "–";
         reviewMessage.textContent = "–";
         setStep(1);
       } catch (error) {
@@ -2609,6 +3193,18 @@
         console.error(error);
       }
     });
+
+    function updateProgress() {
+      const activePanel = document.querySelector(".panel.active");
+      if (!activePanel) return;
+      const doc = activePanel;
+      const scrollTop = window.scrollY;
+      const height = Math.max(doc.offsetHeight - window.innerHeight, 1);
+      const pct = Math.max(0, Math.min((scrollTop / height) * 100, 100));
+      document.documentElement.style.setProperty("--progress", `${pct}%`);
+    }
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
   </script>
 </body>
 </html>
