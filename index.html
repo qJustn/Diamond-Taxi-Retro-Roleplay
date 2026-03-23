@@ -11,12 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#0a0907;
+      --bg:#090806;
       --bg-2:#14110b;
-      --panel:rgba(21,17,10,.72);
+      --panel:rgba(20,17,10,.72);
       --panel-2:rgba(14,11,7,.93);
       --text:#f7f7fb;
-      --muted:#adb2bd;
+      --muted:#aab0bc;
       --line:rgba(255,255,255,.08);
       --accent:#ffd54a;
       --accent-2:#ffb800;
@@ -42,7 +42,7 @@
       color:var(--text);
       background:
         radial-gradient(800px 500px at 10% 0%, rgba(var(--accent-rgb), .10), transparent 60%),
-        radial-gradient(700px 420px at 100% 10%, rgba(var(--accent-rgb), .07), transparent 60%),
+        radial-gradient(700px 420px at 100% 10%, rgba(var(--accent-rgb), .06), transparent 60%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       overflow-x:hidden;
       cursor:none;
@@ -71,9 +71,9 @@
     }
 
     body.theme-gold{
-      --bg:#0a0907;
+      --bg:#090806;
       --bg-2:#14110b;
-      --panel:rgba(21,17,10,.72);
+      --panel:rgba(20,17,10,.72);
       --panel-2:rgba(14,11,7,.93);
       --accent:#ffd54a;
       --accent-2:#ffb800;
@@ -81,20 +81,20 @@
     }
 
     body.theme-blue{
-      --bg:#050c15;
-      --bg-2:#0c1726;
-      --panel:rgba(12,22,37,.72);
+      --bg:#06101a;
+      --bg-2:#0c1828;
+      --panel:rgba(13,22,38,.72);
       --panel-2:rgba(8,15,26,.93);
-      --accent:#58d8ff;
-      --accent-2:#2a91ff;
-      --accent-rgb:88,216,255;
+      --accent:#57d8ff;
+      --accent-2:#2b91ff;
+      --accent-rgb:87,216,255;
     }
 
     body.theme-pink{
-      --bg:#0e0710;
+      --bg:#0f0710;
       --bg-2:#180b1b;
       --panel:rgba(27,14,29,.72);
-      --panel-2:rgba(19,10,20,.93);
+      --panel-2:rgba(18,10,20,.93);
       --accent:#ff73d8;
       --accent-2:#ff46b8;
       --accent-rgb:255,115,216;
@@ -613,17 +613,18 @@
 
     .hero-title{
       margin:0 0 14px;
-      font-size:clamp(3rem, 7vw, 6rem);
-      line-height:.92;
+      font-size:clamp(2.8rem, 6vw, 5.3rem);
+      line-height:.96;
       letter-spacing:-.06em;
       text-wrap:balance;
+      max-width:900px;
     }
 
     .hero-sub{
-      max-width:760px;
+      max-width:820px;
       margin:0 0 26px;
       color:var(--muted);
-      line-height:1.85;
+      line-height:1.9;
       font-size:1.05rem;
     }
 
@@ -1545,6 +1546,7 @@
       .stepper{grid-template-columns:1fr}
       .hero-main,.hero-side{min-height:auto}
       .view{padding-bottom:120px}
+      .hero-title{font-size:clamp(2.3rem, 10vw, 4rem)}
     }
   </style>
 </head>
@@ -1621,8 +1623,8 @@
                   <button class="theme-option" type="button" data-theme="theme-blue">
                     <span>Neon Blue</span>
                     <span class="theme-preview">
-                      <span style="background:#58d8ff"></span>
-                      <span style="background:#2a91ff"></span>
+                      <span style="background:#57d8ff"></span>
+                      <span style="background:#2b91ff"></span>
                       <span style="background:#0d1627"></span>
                     </span>
                   </button>
@@ -1655,17 +1657,16 @@
     <main class="view">
       <div class="container">
         <div class="tab-panels">
-          <!-- HOME -->
           <section class="panel active" data-panel="home">
             <div class="hero">
               <article class="hero-main glass tilt-card">
                 <div class="eyebrow" id="heroEyebrow">Diamond Class Service</div>
                 <h1 class="hero-title" id="heroTitle">
-                  <span class="grad">Premium Taxi</span><br>
-                  statt Standard-Website.
+                  <span class="grad">Diamond Taxi</span><br>
+                  mehr als nur Fahrten.
                 </h1>
                 <p class="hero-sub" id="heroSubtitle">
-                  Diamond Taxi bekommt hier kein normales Onepager-Design, sondern ein modernes Premium-Portal mit Tab-Navigation, Glow-Optik, Theme-Wechsel, interaktiven Karten und hochwertiger Präsentation für Leitung, Team, Preise und Kontakt.
+                  Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt. Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten wir dich durch Alltag, Ausnahme und jede Situation dazwischen.
                 </p>
 
                 <div class="cta-row">
@@ -1719,16 +1720,13 @@
             </div>
           </section>
 
-          <!-- PHILOSOPHY -->
           <section class="panel" data-panel="philosophy">
             <div class="section-shell">
               <div class="section-head">
                 <div>
                   <div class="headline-badge">Branding & Style</div>
                   <h2>Philosophie & Auftritt</h2>
-                  <p>
-                    Jeder Reiter öffnet einen eigenen Bereich innerhalb der Website. Dadurch fühlt sich die Seite wie ein modernes Premium-Portal an.
-                  </p>
+                  <p>Jeder Reiter öffnet einen eigenen Bereich innerhalb der Website. Dadurch wirkt Diamond Taxi wie ein echtes Premium-Portal statt wie ein normaler Scroll-Onepager.</p>
                 </div>
               </div>
 
@@ -1761,9 +1759,7 @@
                 <article class="card glass tilt-card">
                   <div class="headline-badge">Theme Switcher</div>
                   <h2 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;">Farben live wechseln</h2>
-                  <p style="margin:0 0 18px;">
-                    Über den Theme-Switcher kann der Look direkt auf der Seite verändert werden.
-                  </p>
+                  <p style="margin:0 0 18px;">Über den Theme-Switcher kann der Look direkt auf der Seite verändert werden.</p>
 
                   <div class="theme-showcase">
                     <div class="theme-card">
@@ -1779,8 +1775,8 @@
                       <h4>Neon Blue</h4>
                       <p>Futuristisch, clean und technisch-modern.</p>
                       <div class="theme-swatches">
-                        <span style="background:#58d8ff"></span>
-                        <span style="background:#2a91ff"></span>
+                        <span style="background:#57d8ff"></span>
+                        <span style="background:#2b91ff"></span>
                         <span style="background:#0d1627"></span>
                       </div>
                     </div>
@@ -1812,7 +1808,6 @@
             </div>
           </section>
 
-          <!-- LEITUNG -->
           <section class="panel" data-panel="leitung">
             <div class="section-shell">
               <div class="section-head">
@@ -1854,7 +1849,6 @@
             </div>
           </section>
 
-          <!-- TEAM -->
           <section class="panel" data-panel="team">
             <div class="section-shell">
               <div class="section-head">
@@ -1899,7 +1893,6 @@
             </div>
           </section>
 
-          <!-- PREISE -->
           <section class="panel" data-panel="preise">
             <div class="section-shell">
               <div class="section-head">
@@ -1983,7 +1976,6 @@
             </div>
           </section>
 
-          <!-- KONTAKT -->
           <section class="panel" data-panel="kontakt">
             <div class="section-shell">
               <div class="section-head">
@@ -1999,15 +1991,14 @@
               <div class="contact-layout">
                 <article class="card glass tilt-card">
                   <h3>Was hier möglich ist</h3>
-                  <p>
-                    Über dieses Portal können allgemeine Fragen, Bewerbungen und Beschwerden übermittelt werden. Zusätzlich gibt es einen direkten Discord-Button.
-                  </p>
+                  <p>Über dieses Portal können allgemeine Fragen, Bewerbungen und Beschwerden übermittelt werden. Zusätzlich gibt es einen direkten Discord-Button.</p>
 
                   <div class="mini-grid">
                     <div class="mini-item">Allgemeine Fragen an Diamond Taxi</div>
-                    <div class="mini-item">Bewerbungen als Mitarbeiter</div>
-                    <div class="mini-item">Beschwerde einreichen</div>
-                    
+                    <div class="mini-item">Bewerbungen an die Personalleitung</div>
+                    <div class="mini-item">Beschwerden mit Rollen-Ping</div>
+                    <div class="mini-item">Premium Funnel statt Standardformular</div>
+                    <div class="mini-item">Live Validierung und modernes Feedback</div>
                   </div>
 
                   <a class="discord-btn magnetic" href="https://discord.gg/sNvj8eBeVj" target="_blank" rel="noopener noreferrer">
@@ -2068,7 +2059,7 @@
                             <span class="field-hint"></span>
                           </div>
                           <div class="field" data-validate="contact">
-                            <input type="text" id="contact" placeholder="Deine Handynummer" required>
+                            <input type="text" id="contact" placeholder="Dein Kontaktweg" required>
                             <span class="field-hint"></span>
                           </div>
                         </div>
@@ -2091,7 +2082,7 @@
                       <div class="mini-grid" style="margin-top:14px;">
                         <div class="mini-item"><strong>Kategorie:</strong> <span id="reviewCategory">–</span></div>
                         <div class="mini-item"><strong>Name:</strong> <span id="reviewName">–</span></div>
-                        <div class="mini-item"><strong>Handynummer:</strong> <span id="reviewContact">–</span></div>
+                        <div class="mini-item"><strong>Kontaktweg:</strong> <span id="reviewContact">–</span></div>
                         <div class="mini-item"><strong>Nachricht:</strong> <span id="reviewMessage">–</span></div>
                       </div>
 
@@ -2112,7 +2103,6 @@
             </div>
           </section>
 
-          <!-- FAQ -->
           <section class="panel" data-panel="faq">
             <div class="section-shell">
               <div class="section-head">
@@ -2199,7 +2189,7 @@
             Premium Portal mit Tabs, Themes, Glow, Funnel und Executive UI.
           </div>
           <div>
-            
+            Bereit für GitHub Pages als <strong>index.html</strong>
           </div>
         </div>
       </div>
@@ -2217,35 +2207,26 @@
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1485367512303665364/_xK8KZC8CmbS4baBeHczQonkyXAcX3uTfukaNSVbKS5_iQakDjlgXkEXDHQH2iovhLIS";
     const ROLE_ID = "1482761218832863352";
 
-    // HERO TEXT EINFACH ÄNDERBAR
     const HERO_CONTENT = {
       eyebrow: "Diamond Class Service",
-      titleHtml: '<span class="grad">Premium Taxi</span><br>statt Standard-Website.',
-      subtitle: "Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit.
-In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt.
-Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten wir dich durch Alltag, Ausnahme und jede Situation dazwischen."
+      titleHtml: '<span class="grad">Diamond Taxi</span><br>mehr als nur Fahrten.',
+      subtitle: "Diamond Taxi steht für mehr als nur Fahrten – wir liefern ein Erlebnis aus Stil, Präzision und absoluter Zuverlässigkeit. In einer Stadt voller Möglichkeiten sorgen wir dafür, dass du nicht einfach nur ankommst, sondern genau dort, wo dein nächstes Kapitel beginnt. Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten wir dich durch Alltag, Ausnahme und jede Situation dazwischen."
     };
 
     document.getElementById("heroEyebrow").textContent = HERO_CONTENT.eyebrow;
     document.getElementById("heroTitle").innerHTML = HERO_CONTENT.titleHtml;
     document.getElementById("heroSubtitle").textContent = HERO_CONTENT.subtitle;
 
-    // SPLASH / PRELOADER
     const splash = document.getElementById("splash");
     const preloader = document.getElementById("preloader");
 
-    window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    document.getElementById('loader')?.classList.add('hidden');
-  }, 1500);
-});
+    window.addEventListener("load", () => {
       setTimeout(() => splash.classList.add("hidden"), 1500);
       setTimeout(() => preloader.classList.remove("hidden"), 1350);
       setTimeout(() => preloader.classList.add("hidden"), 3200);
       setTimeout(runCountersForActivePanel, 3200);
     });
 
-    // CURSOR
     const cursorDot = document.getElementById("cursorDot");
     const cursorRing = document.getElementById("cursorRing");
     let mouseX = window.innerWidth / 2;
@@ -2279,7 +2260,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
     }
     bindHoverCursor();
 
-    // MAGNETIC
     document.querySelectorAll(".magnetic").forEach((el) => {
       el.addEventListener("mousemove", (e) => {
         if (document.body.classList.contains("reduced-motion")) return;
@@ -2293,7 +2273,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       });
     });
 
-    // PARTICLES
     const particlesWrap = document.getElementById("particles");
     for (let i = 0; i < 28; i++) {
       const p = document.createElement("span");
@@ -2306,7 +2285,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       particlesWrap.appendChild(p);
     }
 
-    // THEME SWITCHER FIXED
     const themeSwitcher = document.getElementById("themeSwitcher");
     const themeToggle = document.getElementById("themeToggle");
     const themeOptions = document.querySelectorAll(".theme-option");
@@ -2345,14 +2323,12 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       }
     });
 
-    // MOTION TOGGLE
     const motionToggle = document.getElementById("motionToggle");
     motionToggle.addEventListener("click", () => {
       document.body.classList.toggle("reduced-motion");
       motionToggle.textContent = document.body.classList.contains("reduced-motion") ? "Motion Off" : "Motion";
     });
 
-    // TAB SYSTEM
     const panels = document.querySelectorAll(".panel");
     const tabButtons = document.querySelectorAll("[data-tab-target]");
 
@@ -2377,7 +2353,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       btn.addEventListener("click", () => activateTab(btn.dataset.tabTarget));
     });
 
-    // REACTIVE LOGO
     const logoWrap = document.getElementById("logoWrap");
     const reactiveLogo = document.getElementById("reactiveLogo");
 
@@ -2396,7 +2371,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       });
     }
 
-    // TILT + MOUSE LIGHT
     document.querySelectorAll(".tilt-card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
@@ -2417,7 +2391,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       });
     });
 
-    // COUNTERS
     const animatedCounters = new WeakSet();
 
     function animateCounter(el) {
@@ -2444,7 +2417,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       activePanel.querySelectorAll(".counter").forEach(animateCounter);
     }
 
-    // FAQ
     document.querySelectorAll(".faq-item").forEach((item) => {
       const trigger = item.querySelector(".faq-trigger");
       trigger.addEventListener("click", () => {
@@ -2452,7 +2424,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
       });
     });
 
-    // FUNNEL
     let chosenCategory = "";
     const stepIndicators = document.querySelectorAll("[data-step-indicator]");
     const stepPanels = document.querySelectorAll("[data-step-panel]");
@@ -2489,7 +2460,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
 
     document.getElementById("backToStep1").addEventListener("click", () => setStep(1));
 
-    // VALIDATION
     const validators = {
       name: (value) => value.trim().length >= 2,
       contact: (value) => value.trim().length >= 3,
@@ -2521,7 +2491,7 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
 
       let msg = "";
       if (type === "name") msg = ok ? "Name sieht gut aus." : "Bitte mindestens 2 Zeichen eingeben.";
-      if (type === "contact") msg = ok ? "Handynummer ist gültig." : "Bitte einen Handynummer angeben.";
+      if (type === "contact") msg = ok ? "Kontaktweg ist gültig." : "Bitte einen Kontaktweg angeben.";
       if (type === "message") msg = ok ? "Nachricht ist lang genug." : "Bitte mindestens 10 Zeichen schreiben.";
 
       setFieldState(field, ok, msg);
@@ -2555,7 +2525,6 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
 
     document.getElementById("backToStep2").addEventListener("click", () => setStep(2));
 
-    // SEND
     const sendBtn = document.getElementById("sendBtn");
     const formStatus = document.getElementById("formStatus");
     const successBadgeWrap = document.getElementById("successBadgeWrap");
@@ -2605,7 +2574,7 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
             color: 16766720,
             fields: [
               { name: "Name", value: name },
-              { name: "Handynummer", value: contact },
+              { name: "Kontaktweg", value: contact },
               { name: "Kategorie", value: subject },
               { name: "Nachricht", value: message.length > 1024 ? message.slice(0, 1021) + "..." : message }
             ],
