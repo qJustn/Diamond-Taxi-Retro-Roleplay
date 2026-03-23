@@ -2234,7 +2234,11 @@ Mit einem klaren Anspruch an Qualität, Präsenz und Professionalität begleiten
     const splash = document.getElementById("splash");
     const preloader = document.getElementById("preloader");
 
-    window.addEventListener("load", () => {
+    window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('loader')?.classList.add('hidden');
+  }, 1500);
+});
       setTimeout(() => splash.classList.add("hidden"), 1500);
       setTimeout(() => preloader.classList.remove("hidden"), 1350);
       setTimeout(() => preloader.classList.add("hidden"), 3200);
